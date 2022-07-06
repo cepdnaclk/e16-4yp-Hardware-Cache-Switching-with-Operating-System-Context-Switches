@@ -72,10 +72,22 @@ module alu(ZERO, RESULT, DATA1, DATA2, SELECT, ROTATE);		//this is alu module
 
 		endcase
 		
-    if( DATA1 == DATA2 ) begin
+    if( RESULT == 0 ) begin
       ZERO = 1'b1;
     end else begin
       ZERO = 1'b0;
+    end
+
+    if( RESULT > 0 ) begin
+      GT = 1'b1;
+    end else begin
+      GT = 1'b0;
+    end
+
+    if( RESULT < 0 ) begin
+      LT = 1'b1;
+    end else begin
+      LT = 1'b0;
     end
 
 	end
