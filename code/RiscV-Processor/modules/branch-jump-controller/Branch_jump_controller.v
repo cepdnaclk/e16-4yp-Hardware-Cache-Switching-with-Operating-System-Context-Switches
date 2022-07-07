@@ -28,16 +28,16 @@ assign  bltu= (func_3[2]) & (func_3[1]) &  (~func_3[0]) & (~zero_signal) & sltu_
 assign  bgeu= (func_3[2]) & (func_3[1]) &  (func_3[0]) & (~sltu_bit_signal);
 
 always @(*)begin
-    branch_jump_mux_signal=(branch_signal &(beq|bge|bne|blt|bltu|bgeu)) | (jump_signal) | 1'b0;
+    branch_jump_mux_signal<=(branch_signal &(beq|bge|bne|blt|bltu|bgeu)) | (jump_signal) | 1'b0;
 end
 
 always @(*) begin
                             
     if (jump_signal==1'b1) begin
-        Branch_jump_PC_OUT=Alu_Jump_imm;
+        Branch_jump_PC_OUT<=Alu_Jump_imm;
     end
     else begin
-        Branch_jump_PC_OUT=Branch_address;
+        Branch_jump_PC_OUT<=Branch_address;
     end
 end
     

@@ -27,40 +27,40 @@ module alu(ZERO, RESULT, DATA1, DATA2, SELECT, ROTATE,zero_signal,sign_bit_signa
 		case(SELECT)
 			3'd0 : 
         	begin						
-				RESULT = ADD;
+				RESULT <= ADD;
 			end
 			3'd1 : 
         	begin			
-          		RESULT = SLL;
+          		RESULT <= SLL;
         	end
 			3'd2 : 
        		begin
-				RESULT = SLT;
+				RESULT <= SLT;
 			end
 			3'd3 : 
         	begin
-				RESULT = SLTU;
+				RESULT <= SLTU;
 			end
       		3'd4 : 
         	begin
-				RESULT = XOR;
+				RESULT <= XOR;
 			end
       		3'd5 : 
         	begin
 				case(ROTATE)
             		1'b0:                       
-              			RESULT = SRL;
+              			RESULT <= SRL;
             		1'b1:                       //arithmetic
-              			RESULT = SRA;
+              			RESULT <= SRA;
 				endcase
 				end
 			3'd6 :
         	begin
-				RESULT = OR;
+				RESULT <= OR;
 			end
 			3'd7 :
         	begin
-				RESULT = AND;
+				RESULT <= AND;
 			end
 
 		endcase
