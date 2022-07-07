@@ -4,7 +4,7 @@ module alu(ZERO, RESULT, DATA1, DATA2, SELECT, ROTATE);		//this is alu module
 	input [31:0] DATA1,DATA2;
 	output reg [31:0] RESULT;
 	input [2:0] SELECT;
-  input ROTATE;
+    input ROTATE;
 	output reg ZERO;
 	integer i;
 	
