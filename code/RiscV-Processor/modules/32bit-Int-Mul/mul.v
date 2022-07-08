@@ -23,15 +23,15 @@ module mul(RESULT, DATA1, DATA2, SELECT);
   always @(*) 
   begin
     case (SELECT)
-      3'd0: RESULT = MUL[31:0]; //mul
-      3'd1: RESULT = MUL[63:32];  //mulh
-      3'd2: RESULT = MULHU[63:32]; //mulhu
-      3'd3: RESULT = MULHSU[63:32];  //mulhsu
+      3'd0: RESULT <= MUL[31:0]; //mul
+      3'd1: RESULT <= MUL[63:32];  //mulh
+      3'd2: RESULT <= MULHU[63:32]; //mulhu
+      3'd3: RESULT <= MULHSU[63:32];  //mulhsu
 
-      3'd4: RESULT = DIV;
-      3'd5: RESULT = DIVU;
-      3'd6: RESULT = REM;
-      3'd7: RESULT = REMU;
+      3'd4: RESULT <= DIV;
+      3'd5: RESULT <= DIVU;
+      3'd6: RESULT <= REM;
+      3'd7: RESULT <= REMU;
     endcase
 
   end
