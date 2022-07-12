@@ -1,4 +1,4 @@
-timescale 1ns/100ps
+`timescale 1ns/100ps
 `include "imem_for_icache.v"
 
 
@@ -36,7 +36,7 @@ module icache (clock,
     ...
     ...
     */
-    i_memory my_i_memory(clock,mem_read,mem_address,mem_readdata,mem_busywait);
+    Instruction_memory my_i_memory(clock,mem_read,mem_address,mem_readdata,mem_busywait);
 
     
     assign valid=valid_bits[address[6:4]];
