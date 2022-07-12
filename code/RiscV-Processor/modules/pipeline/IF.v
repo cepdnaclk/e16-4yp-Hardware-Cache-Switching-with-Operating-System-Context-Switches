@@ -11,7 +11,7 @@ module IF(if_out, pc_4, pc, instration, write_reg_en, write_address, write_data,
     if(reset)begin
       if_out <= 133'd0;
     end else begin
-      if_out <= {pc_4, pc_4, instration, write_reg_en, write_address, write_data};
+      if_out <= {pc, pc_4, instration, write_reg_en, write_address, write_data};
     end
 
   end
