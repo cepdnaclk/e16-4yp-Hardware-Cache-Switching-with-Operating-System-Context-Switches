@@ -1,11 +1,10 @@
-module alu(ZERO, RESULT, DATA1, DATA2, SELECT, ROTATE,zero_signal,sign_bit_signal,sltu_bit_signal);		//this is alu module
+module alu(RESULT, DATA1, DATA2, SELECT, ROTATE,zero_signal,sign_bit_signal,sltu_bit_signal);		//this is alu module
 	
 	//initial input output
 	input [31:0] DATA1,DATA2;
 	output reg [31:0] RESULT;
 	input [2:0] SELECT;
     input ROTATE;
-	output reg ZERO;
     output zero_signal,sign_bit_signal,sltu_bit_signal;
 	
 	wire[31:0] ADD,AND,OR,XOR,SLL,SRL,SRA,SLT,SLTU;
