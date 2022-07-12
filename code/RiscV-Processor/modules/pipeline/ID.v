@@ -12,6 +12,7 @@ module IF(
 	mux_inp_1,
   alu_op,
   fun_3,
+  write_address,
   data_1,
   data_2,
   mux_1_out,
@@ -23,15 +24,16 @@ module IF(
   input mux_complmnt, mux_inp_2, mux_inp_1, mux_d_mem, write_reg_en, reset, clk, d_mem_r, d_mem_w, branch, jump;
   input [2:0] alu_op, fun_3;
   input [1:0] mux_result;
-  output [115:0] if_out;
+  input [4:0] write_address;
+  output [117:0] if_out;
 
   always @(posedge clk)
   begin
 
     if(reset)begin
-      id_out <= 133'd0;
+      id_out <= 120'd0;
     end else begin
-      id_out <= {mux_complmnt, mux_inp_2, mux_inp_1, mux_d_mem, write_reg_en, reset, clk, d_mem_r, d_mem_w, branch, jump, alu_op, fun_3, mux_result, data_1, data_2, mux_1_out};
+      id_out <= {mux_complmnt, mux_inp_2, mux_inp_1, mux_d_mem, write_reg_en, write_address, d_mem_r, d_mem_w, branch, jump, alu_op, fun_3, mux_result, data_1, data_2, mux_1_out};
     end
 
   end
