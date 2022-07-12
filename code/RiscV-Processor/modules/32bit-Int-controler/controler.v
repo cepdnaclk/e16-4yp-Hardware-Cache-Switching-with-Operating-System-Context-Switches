@@ -164,29 +164,21 @@ module control(
 				mux_wire_module <= 3'd0;
 				alu_op <= fun_3;
 			end
-			
-			//mult
-			8'd13: begin
-				wrten = 1'b1;					//write enable
-				mux_cmplmnt_select = 1'b1;		//register out
-				mux_immd_select = 1'b0;			//chose immediate 0
-				alu_op = 4'd8;					//select for alu 8
-				jump = 1'b0;					//jump desable
-				branch = 1'b0;					//branch desable
-				bne = 1'b0;						//bne desable
-				
-			end
 					  
 			//default
 			default: begin
-				wrten = 1'b0;					//write desable
-				mux_cmplmnt_select = 1'bx;		//register out is dont care
-				mux_immd_select = 1'bx;			//chose immediate dont care
-				alu_op = 4'dx;					//select for alu dont care
-				jump = 1'b0;					//jump desable
-				branch = 1'b0;					//branch desable
-				bne = 1'b0;						//bne desable
-				
+				d_mem_r <= 1'd0;
+				d_mem_w <= 1'd0;
+				jump <= 1'd0;
+				branch <= 1'd0;
+				wrten_reg <= 1'd0;
+				mux_complmnt <= 1'd0;
+				mux_d_mem <= 1'd0;
+				mux_result <= 1'd0;
+				mux_inp_2 <= 1'd0;
+				mux_inp_1 <= 1'd0;
+				mux_wire_module <= 3'd0;
+				alu_op <= fun_3;
 			end
 			
 		endcase
