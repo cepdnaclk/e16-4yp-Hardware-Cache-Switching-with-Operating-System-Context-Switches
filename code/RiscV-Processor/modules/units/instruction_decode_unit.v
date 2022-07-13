@@ -1,7 +1,4 @@
-`include "../32bit-Int-controller/controller.v"
-`include "../32bit-regfile/reg_file.v"
-`include "../wire-module/Wire_module.v"
-`include "../mux/mux5x1.v"
+
 
 module instruction_decode_unit (
   write_address_for_current_instruction,

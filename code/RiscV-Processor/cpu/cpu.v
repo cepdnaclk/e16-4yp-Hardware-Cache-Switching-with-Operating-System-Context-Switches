@@ -8,14 +8,34 @@
 `include "../modules/units/instruction_execute_unit.v"
 `include "../modules/units/memory_access_unit.v"
 
+`include "../modules/32bit-Int-controller/controller.v"
+`include "../modules/32bit-regfile/reg_file.v"
+`include "../modules/wire-module/Wire_module.v"
+`include "../modules/mux/mux5x1.v"
+
+`include "../modules/mux/mux2x1.v"
+`include "../modules/i-cache/icache.v"
+
+
+`include "../modules/mux/mux4x1.v"
+`include "../modules/32bit-Int-Mul/mul.v"
+`include "../modules/32bit-Int-Alu/alu.v"
+`include "../modules/branch-jump-controller/Branch_jump_controller.v"
+`include "../modules/32bit-complementer/complementer.v"
+
+`include "../modules/data-store-controller/Data_store_controller.v"
+`include "../modules/data-load-controller/Data_load_controller.v"
+`include "../modules/data-cache/dcache.v"
+
+
 module cpu(
     input clk,
-    input reset,
+    input reset
   );
 
   wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out;
   wire branch_or_jump_signal,data_memory_busywait,busywait;
-  wire [31:0] pc_instruction_fetch_unit_out,pc_4_instruction_fetch_unit_out,branch_jump_addres, write_data;
+  wire [31:0] pc_instruction_fetch_unit_out,pc_4_instruction_fetch_unit_out,branch_jump_addres;
   wire [31:0]instruction_instruction_fetch_unit_out,pc_if_reg_out, pc_4_if_reg_out, instration_if_reg_out;
   wire [31:0] write_data,data_1_id_unit_out,data_2_id_unit_out,mux_1_out_id_unit_out;
   wire [4:0] write_address_for_current_instruction_id_unit_out;
@@ -118,7 +138,7 @@ module cpu(
   pc_id_reg_out, 
   data_1_id_reg_out, 
   data_2_id_reg_out, 
-  mux_1_out_id_reg_out
+  mux_1_out_id_reg_out,
   mux_result_id_reg_out,
   write_address_id_reg_out,
   alu_op_id_reg_out, 
