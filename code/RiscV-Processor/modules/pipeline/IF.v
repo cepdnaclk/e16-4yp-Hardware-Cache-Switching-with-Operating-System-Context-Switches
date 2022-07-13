@@ -1,17 +1,22 @@
-module IF(if_out, pc_4, pc, instration, write_reg_en, write_address, write_data, reset, clk);
+module IF(pc_in, pc_4_in, instration_in, reset, clk,busywait,branch_jump_signal,pc_out, pc_4_out, instration_out);
 
-  input [31:0] pc, pc_4, instration, write_data;
-  input write_reg_en, reset, clk;
-  input [4:0] write_address;
-  output [133:0] if_out;
-
+  input [31:0] pc_in, pc_4_in, instration_in;
+  output reg [31:0] pc_out, pc_4_out, instration_out;
+  input busywait,branch_jump_signal;
+  input  reset, clk;
+  
+  
   always @(posedge clk)
   begin
 
-    if(reset)begin
-      if_out <= 133'd0;
-    end else begin
-      if_out <= {pc, pc_4, instration, write_reg_en, write_address, write_data};
+    if(reset || branch_jump_signal)begin
+      pc_out <=32'd0;
+      pc_4_out <=32'd0;
+      instration_out <=32'd0;
+    end else if (!busywait) begin
+      pc_out <=pc_in;
+      pc_4_out <=pc_4_out;
+      instration_out <=instration_out;
     end
 
   end
