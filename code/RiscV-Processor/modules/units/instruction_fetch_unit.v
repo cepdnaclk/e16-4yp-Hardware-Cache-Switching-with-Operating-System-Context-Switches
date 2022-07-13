@@ -1,6 +1,3 @@
-`include "../mux/mux2x1.v"
-`include "../i-cache/icache.v"
-
 
 module instruction_fetch_unit (
     input [31:0] branch_jump_addres,
@@ -10,7 +7,7 @@ module instruction_fetch_unit (
     input clock,
     output reg [31:0] PC,INCREMENTED_PC_by_four,
     output [31:0]instruction,
-    output busywait,
+    output busywait
 );
 wire [31:0]mux6out;
 wire instruction_mem_busywait;
