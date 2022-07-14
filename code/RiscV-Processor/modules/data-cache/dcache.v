@@ -1,8 +1,9 @@
 `timescale 1ns/100ps
-`include "dmem_for_dcache.v"
+`include "../modules/data-cache/dmem_for_dcache.v"
 
 
-module dcache (clock,
+module dcache (
+    clock,
     reset,
     read,
     write,

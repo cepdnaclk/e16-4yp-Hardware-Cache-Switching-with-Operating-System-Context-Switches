@@ -1,9 +1,4 @@
-`include "../mux/mux2x1.v"
-`include "../mux/mux4x1.v"
-`include "../32bit-Int-Mul/mul.v"
-`include "../32bit-Int-Alu/alu.v"
-`include "../branch-jump-controller/Branch_jump_controller.v"
-`include "../32bit-complementer/complementer.v"
+
 
 module instruction_execute_unit (
     input [31:0] data1,data2,PC,INCREMENTED_PC_by_four,mux1out,

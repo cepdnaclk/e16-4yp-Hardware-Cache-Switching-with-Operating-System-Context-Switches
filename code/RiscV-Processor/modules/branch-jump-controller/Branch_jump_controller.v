@@ -13,7 +13,7 @@ module Branch_jump_controller (
 
 input [31:0] Branch_address,Alu_Jump_imm;
 input [2:0] func_3;
-input RESET,branch_signal,jump_signal,zero_signal,sign_bit_signal,sltu_bit_signal;
+input branch_signal,jump_signal,zero_signal,sign_bit_signal,sltu_bit_signal;
 
 output reg branch_jump_mux_signal;
 output reg [31:0] Branch_jump_PC_OUT;
