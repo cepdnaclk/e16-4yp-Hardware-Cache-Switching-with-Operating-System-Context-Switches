@@ -1,7 +1,3 @@
-`include "../data-store-controller/Data_store_controller.v"
-`include "../data-load-controller/Data_load_controller.v"
-`include "../data-cache/dcache.v"
-`include "../mux/mux2x1.v"
 
 module memory_access_unit (
     input clock,reset,
@@ -15,7 +11,7 @@ module memory_access_unit (
 
     Data_store_controller dsc(func3,store_data,data2);
     Data_load_controller dlc(func3,from_data_cache_out,load_data);
-    dcache mydcache(clock,reset,mem_read_signal,mem_write_signal,mux4_out_result,store_data.from_data_cache_out,data_memory_busywait);
+    dcache mydcache(clock,reset,mem_read_signal,mem_write_signal,mux4_out_result,store_data,from_data_cache_out,data_memory_busywait);
     mux2x1 mux5(load_data,mux4_out_result,mux5signal,mux5_out_write_data);
 
 endmodule
