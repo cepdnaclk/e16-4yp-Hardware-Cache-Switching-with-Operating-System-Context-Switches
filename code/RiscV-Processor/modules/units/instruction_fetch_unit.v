@@ -12,9 +12,9 @@ module instruction_fetch_unit (
 wire [31:0]mux6out;
 wire instruction_mem_busywait;
 
-or(busywait,instruction_mem_busywait,data_mem_busywait);
+or(busywait,instruction_mem_busywait,data_memory_busywait);
 mux2x1 mux6(INCREMENTED_PC_by_four,branch_jump_addres,branch_or_jump_signal,mux6out);
-icache myicache(clock,reset,PC,instruction,mem_busywait);
+icache myicache(clock,reset,PC,instruction,instruction_mem_busywait);
 
 always @(posedge reset) begin //set the pc value depend on the RESET to start the programme
     PC= -4;

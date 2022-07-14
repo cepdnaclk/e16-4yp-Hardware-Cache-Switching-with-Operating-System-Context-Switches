@@ -36,7 +36,7 @@ module reg_file (OUT1, OUT2, IN, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK
 	end
 
 	//resetting part
-	always @ (*)
+	always @ (posedge RESET)
 	begin 
 		//reset part
 		if(RESET)

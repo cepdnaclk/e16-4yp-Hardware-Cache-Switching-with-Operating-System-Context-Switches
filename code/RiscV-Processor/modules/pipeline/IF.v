@@ -6,10 +6,10 @@ module IF(pc_in, pc_4_in, instration_in, reset, clk,busywait,branch_jump_signal,
   input  reset, clk;
   
   
-  always @(posedge clk)
+  always @(posedge clk,posedge reset)
   begin
 
-    if(reset || branch_jump_signal)begin
+    if(reset | branch_jump_signal)begin
       pc_out <=32'd0;
       pc_4_out <=32'd0;
       instration_out <=32'd0;
