@@ -23,13 +23,13 @@ module cpuTestbench;
         RESET = 1'b0;
         
         // TODO: Reset the CPU (by giving a pulse to RESET signal) to start the program execution
-		RESET = 1'b1;
+		// RESET = 1'b1;
 		#2
-		RESET = 1'b0;
-		#15
 		RESET = 1'b1;
 		#4
 		RESET = 1'b0;
+		// #4
+		// RESET = 1'b0;
         
         // finish simulation after some time
         #6000
