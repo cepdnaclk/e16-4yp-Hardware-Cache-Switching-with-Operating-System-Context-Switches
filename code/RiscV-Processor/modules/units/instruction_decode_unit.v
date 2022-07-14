@@ -44,7 +44,7 @@ module instruction_decode_unit (
   
   control control_unit(d_mem_r, d_mem_w, jump, branch, wrten_reg, mux_d_mem, mux_result, mux_inp_2, mux_complmnt, mux_inp_1, mux_wire_module, alu_op, instration[6:0], instration[14:12], instration[31:25]); 
   reg_file register_file(data_1, data_2, data_in, write_address_from_pre, instration[19:15], instration[24:20], write_reg_enable_signal_from_pre, clk, reset);
-  Wire_module wire_module(B_imm, J_imm, S_imm, U_imm, I_imm, instration);
+  Wire_module wire_module(instration,B_imm, J_imm, S_imm, U_imm, I_imm);
   mux5x1 mux_1(B_imm, J_imm, S_imm, U_imm, I_imm, mux_wire_module, mux_1_out);
 
 endmodule
