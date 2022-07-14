@@ -15,8 +15,8 @@ module IF(pc_in, pc_4_in, instration_in, reset, clk,busywait,branch_jump_signal,
       instration_out <=32'd0;
     end else if (!busywait) begin
       pc_out <=pc_in;
-      pc_4_out <=pc_4_out;
-      instration_out <=instration_out;
+      pc_4_out <=pc_4_in;
+      instration_out <=instration_in;
     end
 
   end
