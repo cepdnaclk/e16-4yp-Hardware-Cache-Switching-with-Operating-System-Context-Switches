@@ -1,5 +1,5 @@
 `timescale 1ns/100ps
-`include "imem_for_icache.v"
+`include "../modules/i-cache/imem_for_icache.v"
 
 
 
@@ -75,15 +75,14 @@ module icache (clock,
 
     /* Cache Controller FSM Start */
 
-    parameter IDLE = 3'b000, MEM_READ = 3'b001,CACHE_WRITE=3'b011,RESET=3'b010;
+    parameter IDLE = 3'b000, MEM_READ = 3'b001,CACHE_WRITE=3'b011;
     reg [2:0] state, next_state;
 
     // combinational next state logic
     always @(*)
     begin
         case (state)
-            RESET://reset state
-                next_state <= IDLE;
+
             IDLE: //normal state
                 if ( !hit)  
                     next_state <= MEM_READ;
@@ -105,13 +104,6 @@ module icache (clock,
     always @(*)
     begin
         case(state)
-            RESET:
-            begin
-                mem_read <= 0;
-                mem_address <= 28'dx;
-                busywait <= 0;
-                write_from_mem <= 0;  
-            end
 
             IDLE:
             begin
@@ -144,14 +136,13 @@ module icache (clock,
     always @(posedge clock, posedge reset)
     begin
         if(reset)begin
-            state=RESET;
+            state=IDLE;
            
             for (i =0 ;i<8 ;i++ ) begin
                 valid_bits[i] <= 1'b0;
             end
 
         end
-        
         else
             state <= next_state;
     end
