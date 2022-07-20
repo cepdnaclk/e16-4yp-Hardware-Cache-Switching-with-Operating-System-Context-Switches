@@ -1,6 +1,7 @@
 
 
 module instruction_decode_unit (
+  reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,
   write_address_for_current_instruction,
   rotate_signal,
   d_mem_r, 
@@ -36,6 +37,7 @@ module instruction_decode_unit (
   input [4:0] write_address_from_pre;
   wire [2:0] mux_wire_module;
   wire [31:0] B_imm, J_imm, S_imm, U_imm, I_imm;
+  output [31:0] reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output;
 
 
   assign write_address_for_current_instruction=instration[11:7];
@@ -43,7 +45,7 @@ module instruction_decode_unit (
   assign rotate_signal=instration[30];
   
   control control_unit(d_mem_r, d_mem_w, jump, branch, write_reg_en, mux_d_mem, mux_result, mux_inp_2, mux_complmnt, mux_inp_1, mux_wire_module, alu_op, instration[6:0], instration[14:12], instration[31:25]); 
-  reg_file register_file(data_1, data_2, data_in, write_address_from_pre, instration[19:15], instration[24:20], write_reg_enable_signal_from_pre, clk, reset);
+  reg_file register_file(data_1, data_2, data_in, write_address_from_pre, instration[19:15], instration[24:20], write_reg_enable_signal_from_pre, clk, reset,reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output);
   Wire_module wire_module(instration,B_imm, J_imm, S_imm, U_imm, I_imm);
   mux5x1 mux_1(B_imm, J_imm, S_imm, U_imm, I_imm, mux_wire_module, mux_1_out);
 
