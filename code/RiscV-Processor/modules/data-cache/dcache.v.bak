@@ -1,4 +1,5 @@
 `timescale 1ns/100ps
+`include "../modules/data-cache/dmem_for_dcache.v"
 
 
 module dcache (
@@ -12,7 +13,6 @@ module dcache (
 	busywait
     );
 
-    integer i;
     input reset,read,write,clock;
     input [31:0] address,writedata;
 
@@ -60,16 +60,7 @@ module dcache (
 
    
     always @(*) begin
-				
-		if(reset)begin
-			for (i =0 ;i<8 ;i = i + 1) begin
-                valid_bits[i]<=1'b0;
-            end
 
-            for (i =0 ;i<8 ;i = i + 1 ) begin
-                dirty_bits[i]<=1'b0;
-            end
-		end
         if(hit && write) begin //write data to the block when hit
             dirty_bits[address[6:4]]<=1;
             valid_bits[address[6:4]]<=1;
@@ -177,12 +168,19 @@ module dcache (
     end
 
     // sequential logic for state transitioning 
-   
-    always @(posedge clock, posedge reset)
+    integer i;
+    always @(posedge clock, reset)
     begin
         if(reset)begin
             state <= IDLE;
             
+            for (i =0 ;i<8 ;i++ ) begin
+                valid_bits[i]<=1'b0;
+            end
+
+            for (i =0 ;i<8 ;i++ ) begin
+                dirty_bits[i]<=1'b0;
+            end
         end
         else
             state <= next_state;
