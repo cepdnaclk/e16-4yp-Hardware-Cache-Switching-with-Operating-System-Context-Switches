@@ -65,7 +65,7 @@ module icache (clock,
 			for (i =0 ;i<8 ;i = i+1 ) begin
                 valid_bits[i] <= 1'b0;
             end
-		  end
+		end
         if (write_from_mem) begin //write data get from instruction memory
             valid_bits[index] <= 1;
             tags[index] <= address[31:7];
