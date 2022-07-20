@@ -1,4 +1,6 @@
 `timescale 1ns/100ps
+`include "../modules/i-cache/imem_for_icache.v"
+
 
 
 
@@ -34,7 +36,7 @@ module icache (clock,
     ...
     ...
     */
-    Instruction_memory my_i_memory(reset,clock,mem_read,mem_address,mem_readdata,mem_busywait);
+    Instruction_memory my_i_memory(clock,mem_read,mem_address,mem_readdata,mem_busywait);
 
     
     assign valid=valid_bits[address[6:4]];
@@ -61,11 +63,7 @@ module icache (clock,
 
    
     always @(*) begin
-        if(reset)begin
-			for (i =0 ;i<8 ;i = i+1 ) begin
-                valid_bits[i] <= 1'b0;
-            end
-		  end
+        
         if (write_from_mem) begin //write data get from instruction memory
             valid_bits[index] <= 1;
             tags[index] <= address[31:7];
@@ -122,6 +120,7 @@ module icache (clock,
                 busywait <= 1;
                 write_from_mem <= 0;
             end
+
             CACHE_WRITE:
             begin
                 mem_read <= 0;
@@ -138,6 +137,11 @@ module icache (clock,
     begin
         if(reset)begin
             state=IDLE;
+           
+            for (i =0 ;i<8 ;i++ ) begin
+                valid_bits[i] <= 1'b0;
+            end
+
         end
         else
             state <= next_state;

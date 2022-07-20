@@ -48,7 +48,7 @@ module ID(
   always @(posedge clk,posedge reset)
   begin
 
-    if(reset | branch_jump_signal)begin
+    if(reset)begin
 
       rotate_signal_out <=  1'b0;
       mux_complmnt_out <=  1'b0;
@@ -72,7 +72,29 @@ module ID(
 
       write_address_out <= 5'd0;
       
+    end else if(branch_jump_signal)begin
 
+      rotate_signal_out <=  1'b0;
+      mux_complmnt_out <=  1'b0;
+      mux_inp_2_out <= 1'b0;
+      mux_inp_1_out <= 1'b0;
+      mux_d_mem_out <=  1'b0;
+      write_reg_en_out <= 1'b0;
+      d_mem_r_out <= 1'b0;
+      d_mem_w_out <=1'b0;
+      branch_out <=1'b0;
+      jump_out <=1'b0;
+
+      alu_op_out <= 3'b000;
+      fun_3_out <= 3'b000;
+
+      pc_4_out <= 31'd0;
+      pc_out <= 31'd0;
+      data_1_out <= 31'd0;
+      data_2_out <= 31'd0;
+      mux_1_out_out <= 31'd0;
+
+      write_address_out <= 5'd0;
 
     end else if (!busywait) begin
       rotate_signal_out <=rotate_signal_in;
