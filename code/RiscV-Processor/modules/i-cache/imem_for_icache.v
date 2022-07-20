@@ -24,7 +24,7 @@ begin
     busywait = 0;
     readaccess = 0;
 
-         {memory_array[32'd03], memory_array[32'd02], memory_array[32'd01], memory_array[32'd00]} <= 32'b10001111000100001000000010010011;           
+         {memory_array[32'd03], memory_array[32'd02], memory_array[32'd01], memory_array[32'd00]} <= 32'h3e800093;           
          {memory_array[32'd07], memory_array[32'd06], memory_array[32'd05], memory_array[32'd04]} <= 32'b00000000000000000000000000000000;           
          {memory_array[32'd11], memory_array[32'd10], memory_array[32'd09], memory_array[32'd08]} <= 32'b00000000000000000000000000000000;         
          {memory_array[32'd15], memory_array[32'd14], memory_array[32'd13], memory_array[32'd12]} <= 32'b00000000000000001111011000010011;       
