@@ -17,21 +17,14 @@ module reg_file (OUT1, OUT2, IN, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK
   // end
 
 	//writting part
-	always @ (posedge CLK,posedge RESET)			
+	always @ (posedge CLK)			
 	begin
 		//writting part
-		if(RESET)
-		begin
-				for(j = 0; j <= 31; j = j +1 )
-				begin
-					Register[j] <= 32'b00000000000000000000000000000000;			//assigning 
-
-				end
-		end
-		else if(WRITE)
+		if(WRITE)
 		begin
 			Register[INADDRESS] <= IN;		//assign
 		end
+
 
 	end
 
@@ -40,6 +33,20 @@ module reg_file (OUT1, OUT2, IN, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK
 	begin
 		OUT1 <= Register[OUT1ADDRESS];		//assign
 		OUT2 <= Register[OUT2ADDRESS];		//assign
+	end
+
+	//resetting part
+	always @ (posedge RESET)
+	begin 
+		//reset part
+		if(RESET)
+		begin
+				for(j = 0; j <= 31; j = j +1 )
+				begin
+					Register[j] <= 32'b00000000000000000000000000000000;			//assigning 
+
+				end
+		end
 	end
 
 endmodule
