@@ -338,14 +338,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 720 456)
-	(pt 800 456)
-)
-(connector
-	(pt 800 456)
-	(pt 800 352)
-)
-(connector
 	(pt 976 240)
 	(pt 968 240)
 	(bus)
@@ -368,6 +360,16 @@ applicable agreement for further details.
 (connector
 	(pt 848 112)
 	(pt 848 184)
+	(bus)
+)
+(connector
+	(pt 720 456)
+	(pt 800 456)
+	(bus)
+)
+(connector
+	(pt 800 456)
+	(pt 800 352)
 	(bus)
 )
 (junction (pt 328 312))
