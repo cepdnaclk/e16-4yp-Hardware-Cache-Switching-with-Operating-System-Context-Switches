@@ -36,12 +36,9 @@ end
 //Reading & writing
 always @(posedge clock,posedge reset)
 begin
-    if(reset)begin
-        busywait = 0;
-    end
-	else if(read)
+	if(read)
 	begin
-        busywait =1 ;
+        busywait = ;
 		readdata[7:0]     = #40 memory_array[{address,4'b0000}];
         readdata[15:8]    = #40 memory_array[{address,4'b0001}];
         readdata[23:16]   = #40 memory_array[{address,4'b0010}];
@@ -60,9 +57,9 @@ begin
         readdata[127:120] = #40 memory_array[{address,4'b1111}];
 		busywait = 0;
 	end
-	else if(write)
+	if(write)
 	begin
-        busywait = 1;
+        busywait = ;
 		memory_array[{address,4'b0000}] = #40 writedata[7:0]    ;
         memory_array[{address,4'b0001}] = #40 writedata[15:8]   ;
         memory_array[{address,4'b0010}] = #40 writedata[23:16]  ;
