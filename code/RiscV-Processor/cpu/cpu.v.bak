@@ -1,3 +1,31 @@
+`include "../modules/pipeline/IF.v"
+`include "../modules/pipeline/ID.v"
+`include "../modules/pipeline/EX.v"
+`include "../modules/pipeline/MEM.v"
+
+`include "../modules/units/instruction_fetch_unit.v"
+`include "../modules/units/instruction_decode_unit.v"
+`include "../modules/units/instruction_execute_unit.v"
+`include "../modules/units/memory_access_unit.v"
+
+`include "../modules/32bit-Int-controller/controller.v"
+`include "../modules/32bit-regfile/reg_file.v"
+`include "../modules/wire-module/Wire_module.v"
+`include "../modules/mux/mux5x1.v"
+
+`include "../modules/mux/mux2x1.v"
+`include "../modules/i-cache/icache.v"
+
+
+`include "../modules/mux/mux4x1.v"
+`include "../modules/32bit-Int-Mul/mul.v"
+`include "../modules/32bit-Int-Alu/alu.v"
+`include "../modules/branch-jump-controller/Branch_jump_controller.v"
+`include "../modules/32bit-complementer/complementer.v"
+
+`include "../modules/data-store-controller/Data_store_controller.v"
+`include "../modules/data-load-controller/Data_load_controller.v"
+`include "../modules/data-cache/dcache.v"
 
 
 module cpu(
