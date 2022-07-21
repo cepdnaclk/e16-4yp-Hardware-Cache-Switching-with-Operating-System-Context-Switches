@@ -2,7 +2,8 @@
 
 module cpu(
     input clk,
-    input reset
+    input reset,
+    output [31:0] reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output
   );
 
   wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out;
@@ -19,6 +20,13 @@ module cpu(
   wire [4:0] write_address_id_reg_out,write_address_ex_reg_out;
   wire [31:0]result_iex_unit_out,data_2_ex_reg_out,result_mux_4_ex_reg_out;
   wire mux_d_mem_ex_reg_out,write_reg_en_ex_reg_out,d_mem_r_ex_reg_out,d_mem_w_ex_reg_out;
+  wire [31:0] Register_value_output_wires [31:0];
+  
+
+  
+
+
+
 
   instruction_fetch_unit if_unit(
     branch_jump_addres, 
@@ -46,6 +54,7 @@ module cpu(
     );
 
   instruction_decode_unit id_unit(
+    reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,
     write_address_for_current_instruction_id_unit_out,
     rotate_signal_id_unit_out,
     d_mem_r_id_unit_out, 
