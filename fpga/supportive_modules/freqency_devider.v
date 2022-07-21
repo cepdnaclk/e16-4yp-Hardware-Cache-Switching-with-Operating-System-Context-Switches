@@ -15,7 +15,7 @@ begin
 		end
 		else
 		begin
-			counter <=counter+1;
+			counter <=counter+3'b001;
 		end
 	end
 end
