@@ -135,8 +135,8 @@ module dcache (
             begin
                 mem_read <= 0;
                 mem_write <= 0;
-                mem_address <= 28'dx;
-                mem_writedata <= 128'dx;
+                //mem_address <= 28'dx;
+                //mem_writedata <= 128'dx;
                 busywait <= 0;
                 write_from_mem <= 0;  
             end
@@ -146,7 +146,7 @@ module dcache (
                 mem_read <= 1;
                 mem_write <= 0;
                 mem_address <= address[31:4];
-                mem_writedata <= 128'dx;
+                //mem_writedata <= 128'dx;
                 busywait <= 1;
                 write_from_mem <=0;
             end
@@ -155,8 +155,8 @@ module dcache (
             begin
                 mem_read <=0;
                 mem_write <=0;
-                mem_address <= 28'dx;
-                mem_writedata <= 128'dx;
+                //mem_address <= 28'dx;
+                //mem_writedata <= 128'dx;
                 busywait <=1;
                 write_from_mem <=1;//this signal assert when data block is come from memoey in this state
             end

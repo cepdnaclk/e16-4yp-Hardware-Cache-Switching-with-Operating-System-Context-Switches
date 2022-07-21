@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect 72 328 240 344)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clock" (rect 5 0 31 12)(font "Arial" ))
+	(text "clock" (rect 5 0 30 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -34,12 +34,13 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 16 344 72 360))
 )
 (pin
 	(input)
 	(rect 64 416 232 432)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "reset" (rect 5 0 30 12)(font "Arial" ))
+	(text "reset" (rect 5 0 29 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -50,12 +51,13 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 0 432 64 448))
 )
 (pin
 	(input)
 	(rect 552 448 720 464)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "select[2..0]" (rect 5 0 61 12)(font "Arial" ))
+	(text "select[2..0]" (rect 5 0 60 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -66,12 +68,29 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 488 464 552 480))
+)
+(pin
+	(input)
+	(rect 680 536 904 552)
+	(text "INPUT" (rect 181 0 209 10)(font "Arial" (font_size 6)))
+	(text "output_upper_lower_select" (rect 5 0 135 12)(font "Arial" ))
+	(pt 224 8)
+	(drawing
+		(line (pt 140 12)(pt 165 12))
+		(line (pt 140 4)(pt 165 4))
+		(line (pt 169 8)(pt 224 8))
+		(line (pt 140 12)(pt 140 4))
+		(line (pt 165 4)(pt 169 8))
+		(line (pt 165 12)(pt 169 8))
+	)
+	(text "VCC" (rect 184 7 204 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
-	(rect 864 104 1043 120)
+	(rect 1000 96 1179 112)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "reg_output[31..0]" (rect 90 0 173 12)(font "Arial" ))
+	(text "reg_output[15..0]" (rect 90 0 173 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -254,6 +273,35 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 160 160))
 	)
 )
+(symbol
+	(rect 984 440 1152 520)
+	(text "mux_16_bit_2x1" (rect 5 0 85 12)(font "Arial" ))
+	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "in[31..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "in[31..0]" (rect 21 27 61 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "select" (rect 0 0 29 12)(font "Arial" ))
+		(text "select" (rect 21 43 50 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "out[15..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "out[15..0]" (rect 108 27 155 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 152 64))
+	)
+)
 (connector
 	(pt 240 336)
 	(pt 304 336)
@@ -338,31 +386,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 976 240)
-	(pt 968 240)
-	(bus)
-)
-(connector
-	(pt 968 240)
-	(pt 968 184)
-	(bus)
-)
-(connector
-	(pt 968 184)
-	(pt 848 184)
-	(bus)
-)
-(connector
-	(pt 864 112)
-	(pt 848 112)
-	(bus)
-)
-(connector
-	(pt 848 112)
-	(pt 848 184)
-	(bus)
-)
-(connector
 	(pt 720 456)
 	(pt 800 456)
 	(bus)
@@ -372,4 +395,48 @@ applicable agreement for further details.
 	(pt 800 352)
 	(bus)
 )
+(connector
+	(pt 1000 104)
+	(pt 944 104)
+	(bus)
+)
+(connector
+	(pt 984 240)
+	(pt 984 472)
+	(bus)
+)
+(connector
+	(pt 968 240)
+	(pt 976 240)
+	(bus)
+)
+(connector
+	(pt 976 240)
+	(pt 984 240)
+	(bus)
+)
+(connector
+	(pt 904 544)
+	(pt 984 544)
+)
+(connector
+	(pt 984 544)
+	(pt 984 488)
+)
+(connector
+	(pt 944 192)
+	(pt 944 104)
+	(bus)
+)
+(connector
+	(pt 1152 192)
+	(pt 944 192)
+	(bus)
+)
+(connector
+	(pt 1152 192)
+	(pt 1152 472)
+	(bus)
+)
 (junction (pt 328 312))
+(junction (pt 976 240))
