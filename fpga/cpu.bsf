@@ -86,6 +86,13 @@ applicable agreement for further details.
 		(text "reg6_output[31..0]" (rect 101 123 171 135)(font "Arial" ))
 		(line (pt 192 128)(pt 176 128)(line_width 3))
 	)
+	(port
+		(pt 192 144)
+		(output)
+		(text "ins[31..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "ins[31..0]" (rect 137 139 171 151)(font "Arial" ))
+		(line (pt 192 144)(pt 176 144)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 176 160)(line_width 1))
 	)

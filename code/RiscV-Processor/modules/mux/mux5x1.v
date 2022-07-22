@@ -22,7 +22,7 @@ always @(*) begin
         3'b011:begin
             out<=in4;
         end
-        3'b100:begin
+        default:begin
             out<=in5;
         end
     endcase

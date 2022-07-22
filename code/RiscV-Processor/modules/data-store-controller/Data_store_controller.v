@@ -24,6 +24,9 @@ always @(*)begin
         3'b010:begin       //store full word
             to_data_memory <= data2;
         end
+		  default:begin       //store full word
+            to_data_memory <= data2;
+        end
     endcase
 end
 endmodule

@@ -29,7 +29,7 @@ always @(*) begin
         3'b100:begin
             data_out<=lbu;
         end
-        3'b101:begin
+        default:begin
             data_out<=lhu;
         end
     endcase

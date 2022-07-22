@@ -20,7 +20,7 @@ module alu(RESULT, DATA1, DATA2, SELECT, ROTATE,zero_signal,sign_bit_signal,sltu
 	assign  SLTU = ($unsigned(DATA1) < $unsigned(DATA2)) ? 32'd1 : 32'd0;
 	
 	//always block
-	always @ (SELECT or DATA1 or DATA2 or ROTATE)
+	always @ (*)
 	begin
 
 		case(SELECT)
