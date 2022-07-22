@@ -18,12 +18,13 @@ module icache (clock,
 
     wire valid,mem_busywait;
     wire [1:0] offset;
-    wire [2:0] tag,index; 
+    wire [2:0] index; 
     wire [127:0] mem_readdata;
+    wire [24:0]tag;
 
     reg hit,mem_read,write_from_mem;
     reg valid_bits[0:7];
-    reg [2:0] tags[0:7];
+    reg [24:0] tags[0:7];
     reg [31:0] word[0:7][0:3];
     reg [27:0] mem_address;
     
@@ -44,9 +45,9 @@ module icache (clock,
 
     always @(*) begin //extrac the data from word 
 
-        if(valid)begin
-            instruction <= word[index][offset];
-        end
+        
+        instruction <= word[index][offset];
+        
     end
 
     always @(*) begin //check wheather hit or miss
@@ -60,13 +61,13 @@ module icache (clock,
     end
 
    
-    always @(*) begin
+    always @(posedge clock,posedge reset) begin
         if(reset)begin
 			for (i =0 ;i<8 ;i = i+1 ) begin
                 valid_bits[i] <= 1'b0;
             end
-		end
-        if (write_from_mem) begin //write data get from instruction memory
+		  end
+        else if (write_from_mem) begin //write data get from instruction memory
             valid_bits[index] <= 1;
             tags[index] <= address[31:7];
             {word[index][3],word[index][2],word[index][1],word[index][0]} <= mem_readdata;

@@ -23,15 +23,15 @@ output reg      	busywait;
 reg [7:0] memory_array [1023:0];
 
 //Detecting an incoming memory access
-/*
+
 reg readaccess, writeaccess;
 always @(read, write)
 begin
-	busywait = (read || write)? 1 : 0;
-	readaccess = (read && !write)? 1 : 0;
-	writeaccess = (!read && write)? 1 : 0;
+	//busywait = (read || write)? 1 : 0;
+	readaccess = (read && !write)? 1'b1 : 1'b0;
+	writeaccess = (!read && write)? 1'b1 : 1'b0;
 end
-*/
+
 
 //Reading & writing
 always @(posedge clock,posedge reset)
@@ -39,7 +39,7 @@ begin
     if(reset)begin
         busywait = 0;
     end
-	else if(read)
+	else if(readaccess )
 	begin
         busywait =1 ;
 		readdata[7:0]     = #40 memory_array[{address,4'b0000}];
@@ -60,7 +60,7 @@ begin
         readdata[127:120] = #40 memory_array[{address,4'b1111}];
 		busywait = 0;
 	end
-	else if(write)
+	else if(writeaccess)
 	begin
         busywait = 1;
 		memory_array[{address,4'b0000}] = #40 writedata[7:0]    ;
