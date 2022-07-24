@@ -65,7 +65,7 @@ module icache (clock,
 			for (i =0 ;i<8 ;i = i+1 ) begin
                 valid_bits[i] <= 1'b0;
             end
-		  end
+		end
         if (write_from_mem) begin //write data get from instruction memory
             valid_bits[index] <= 1;
             tags[index] <= address[31:7];
@@ -110,7 +110,7 @@ module icache (clock,
             IDLE:
             begin
                 mem_read <= 0;
-                mem_address <= 28'dx;
+                //mem_address <= 28'dx;
                 busywait <= 0;
                 write_from_mem <= 0;  
             end
@@ -125,7 +125,7 @@ module icache (clock,
             CACHE_WRITE:
             begin
                 mem_read <= 0;
-                mem_address <= 28'dx;
+                //mem_address <= 28'dx;
                 busywait <= 1;
                 write_from_mem <= 1;//this signal assert when data block is come from memoey in this state
             end
@@ -137,7 +137,7 @@ module icache (clock,
     always @(posedge clock, posedge reset)
     begin
         if(reset)begin
-            state=IDLE;
+            state <= IDLE;
         end
         else
             state <= next_state;

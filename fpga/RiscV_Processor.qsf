@@ -1,0 +1,107 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2012 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 12.1 Build 177 11/07/2012 SJ Full Version
+# Date created = 21:54:52  July 18, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		RiscV_Processor_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY RiscV_Processor
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:54:52  JULY 18, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/32bit-regfile/reg_file.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/32bit-Int-controller/controller.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/wire-module/Wire_module.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/units/memory_access_unit.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/units/instruction_fetch_unit.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/units/instruction_execute_unit.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/units/instruction_decode_unit.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/pipeline/IF.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/pipeline/ID.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/pipeline/EX.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/mux/mux5x1.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/mux/mux4x1.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/mux/mux2x1.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/i-cache/imem_for_icache.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/i-cache/icache.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/data-store-controller/Data_store_controller.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/data-load-controller/Data_load_controller.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/branch-jump-controller/Branch_jump_controller.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/data-cache/dmem_for_dcache.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/data-cache/dcache.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/32bit-Int-Mul/mul.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/32bit-Int-Alu/alu.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/modules/32bit-complementer/complementer.v"
+set_global_assignment -name VERILOG_FILE "../code/RiscV-Processor/cpu/cpu.v"
+set_global_assignment -name BDF_FILE RiscV_Processor.bdf
+set_global_assignment -name VERILOG_FILE supportive_modules/freqency_devider.v
+set_global_assignment -name VERILOG_FILE supportive_modules/mux.v
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_Y2 -to clock
+set_location_assignment PIN_AB28 -to reset
+set_location_assignment PIN_AD27 -to select[2]
+set_location_assignment PIN_AC27 -to select[1]
+set_location_assignment PIN_AC28 -to select[0]
+set_global_assignment -name SOURCE_FILE hex_memory_file.mem
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE supportive_modules/mux_16_bit_2x1.v
+set_location_assignment PIN_AB27 -to output_upper_lower_select
+set_location_assignment PIN_G19 -to reg_output[0]
+set_location_assignment PIN_F19 -to reg_output[1]
+set_location_assignment PIN_E19 -to reg_output[2]
+set_location_assignment PIN_F21 -to reg_output[3]
+set_location_assignment PIN_F18 -to reg_output[4]
+set_location_assignment PIN_E18 -to reg_output[5]
+set_location_assignment PIN_J19 -to reg_output[6]
+set_location_assignment PIN_H19 -to reg_output[7]
+set_location_assignment PIN_J17 -to reg_output[8]
+set_location_assignment PIN_G17 -to reg_output[9]
+set_location_assignment PIN_J15 -to reg_output[10]
+set_location_assignment PIN_H16 -to reg_output[11]
+set_location_assignment PIN_J16 -to reg_output[12]
+set_location_assignment PIN_H17 -to reg_output[13]
+set_location_assignment PIN_F15 -to reg_output[14]
+set_location_assignment PIN_G15 -to reg_output[15]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

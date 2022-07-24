@@ -59,32 +59,30 @@ module dcache (
     end
 
    
-    always @(*) begin
+    always @(posedge clock,posedge reset) begin
 				
 		if(reset)begin
-			for (i =0 ;i<8 ;i = i + 1) begin
-                valid_bits[i]<=1'b0;
-            end
+				for (i =0 ;i<8 ;i = i + 1) begin
+						 valid_bits[i]<=1'b0;
+					end
 
-            for (i =0 ;i<8 ;i = i + 1 ) begin
-                dirty_bits[i]<=1'b0;
-            end
+					for (i =0 ;i<8 ;i = i + 1 ) begin
+						 dirty_bits[i]<=1'b0;
+					end
 		end
-        if(hit && write) begin //write data to the block when hit
+        else if(hit && write) begin //write data to the block when hit
             dirty_bits[address[6:4]]<=1;
             valid_bits[address[6:4]]<=1;
             word[address[6:4]][address[3:2]]<=writedata;
-        end
-            
-        if (write_from_mem & read) begin //write data get from memory its happen only read miss
+        end   
+        else if (write_from_mem & read) begin //write data get from memory its happen only read miss
             dirty_bits[address[6:4]]<=0;
             valid_bits[address[6:4]]<=1;
             tags[address[6:4]]<=address[31:7];
             {word[address[6:4]][3],word[address[6:4]][2],word[address[6:4]][1],word[address[6:4]][0]}<=mem_readdata;
 
         end
-
-        if (write_from_mem & write) begin //write data get from cpu on write miss 
+        else if (write_from_mem & write) begin //write data get from cpu on write miss 
             dirty_bits[address[6:4]]<=1;
             valid_bits[address[6:4]]<=1;
             tags[address[6:4]]<=address[31:7];
@@ -137,8 +135,8 @@ module dcache (
             begin
                 mem_read <= 0;
                 mem_write <= 0;
-                mem_address <= 28'dx;
-                mem_writedata <= 128'dx;
+                //mem_address <= 28'dx;
+                //mem_writedata <= 128'dx;
                 busywait <= 0;
                 write_from_mem <= 0;  
             end
@@ -148,7 +146,7 @@ module dcache (
                 mem_read <= 1;
                 mem_write <= 0;
                 mem_address <= address[31:4];
-                mem_writedata <= 128'dx;
+                //mem_writedata <= 128'dx;
                 busywait <= 1;
                 write_from_mem <=0;
             end
@@ -157,8 +155,8 @@ module dcache (
             begin
                 mem_read <=0;
                 mem_write <=0;
-                mem_address <= 28'dx;
-                mem_writedata <= 128'dx;
+                //mem_address <= 28'dx;
+                //mem_writedata <= 128'dx;
                 busywait <=1;
                 write_from_mem <=1;//this signal assert when data block is come from memoey in this state
             end
