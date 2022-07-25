@@ -20,7 +20,7 @@ title:
 
 - Dr.Isuru Nawinne, [email](mailto:isurunawinne@eng.pdn.ac.lk)
 - Dr.Mahanama Wickramasingh, [email](mailto:mahanamaw@eng.pdn.ac.lk)
-- Prof.Roshan Rage, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Prof.Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
 - Dr.Haris Javaid, [email](mailto:haris.javaid@amd.com)
 
 #### Table of content
