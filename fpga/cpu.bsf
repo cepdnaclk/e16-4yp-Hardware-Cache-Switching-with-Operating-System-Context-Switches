@@ -89,8 +89,8 @@ applicable agreement for further details.
 	(port
 		(pt 192 144)
 		(output)
-		(text "ins[31..0]" (rect 0 0 34 12)(font "Arial" ))
-		(text "ins[31..0]" (rect 137 139 171 151)(font "Arial" ))
+		(text "pc[31..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "pc[31..0]" (rect 138 139 171 151)(font "Arial" ))
 		(line (pt 192 144)(pt 176 144)(line_width 3))
 	)
 	(drawing
