@@ -4,7 +4,7 @@ module cpu(
     input clk,
     input reset,
     output [31:0] reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,
-	 output reg[31:0]ins
+	  output reg[31:0]pc
   );
 
   wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out;
@@ -23,12 +23,17 @@ module cpu(
   wire mux_d_mem_ex_reg_out,write_reg_en_ex_reg_out,d_mem_r_ex_reg_out,d_mem_w_ex_reg_out;
   wire [31:0] Register_value_output_wires [31:0];
   
-
   
 
-always @(posedge clk)
+always @(posedge clk,posedge reset)
 begin
- ins=instruction_instruction_fetch_unit_out;
+ if (reset) begin
+  pc=32'd0;
+ end
+ else begin
+  pc=pc_instruction_fetch_unit_out;
+ end
+ 
 end
 
 
