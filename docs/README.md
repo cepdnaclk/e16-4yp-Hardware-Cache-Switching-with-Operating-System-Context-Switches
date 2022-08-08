@@ -9,18 +9,19 @@ title:
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Hardware-Cache-Switching-with-Operating-System-Context-Switches
 
 #### Team
 
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
+- E/16/332, Randika Viraj, [email](mailto:e16332@eng.pdn.ac.lk)
+- E/16/222, Wshva Madushnaka, [email](mailto:e16222@eng.pdn.ac.lk)
 
 #### Supervisors
 
-- Name, [email](mailto:name@eng.pdn.ac.lk)
-- Name, [email](mailto:name@eng.pdn.ac.lk)
+- Dr.Isuru Nawinne, [email](mailto:isurunawinne@eng.pdn.ac.lk)
+- Dr.Mahanama Wickramasingh, [email](mailto:mahanamaw@eng.pdn.ac.lk)
+- Prof.Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Dr.Haris Javaid, [email](mailto:haris.javaid@amd.com)
 
 #### Table of content
 

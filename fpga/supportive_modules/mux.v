@@ -1,9 +1,11 @@
-module mux5x1 (
+module mux6x1 (
     input [31:0]in1,
     input [31:0]in2,
     input [31:0]in3,
     input [31:0]in4,
     input [31:0]in5,
+	 input [31:0]in6,
+	 input [31:0]in7,
     input [2:0]select,
     output reg [31:0] out
 );
@@ -22,8 +24,14 @@ always @(*) begin
         3'b011:begin
             out<=in4;
         end
-        default:begin
+        3'b100:begin
             out<=in5;
+        end
+		  3'b101:begin
+            out<=in6;
+        end
+		  default:begin
+            out<=in7;
         end
     endcase
 end
