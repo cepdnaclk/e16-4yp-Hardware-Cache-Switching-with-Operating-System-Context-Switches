@@ -161,7 +161,7 @@ module control(
 				wrten_reg <= 1'd1;
 				mux_complmnt <= fun_7[5] ? 1'd1 : 1'd0;
 				mux_d_mem <= 1'd1;
-				mux_result <= 2'd2;
+				mux_result <= 2'd0;
 				mux_inp_2 <= 1'd0;
 				mux_inp_1 <= 1'd0;
 				mux_wire_module <= 3'd0;

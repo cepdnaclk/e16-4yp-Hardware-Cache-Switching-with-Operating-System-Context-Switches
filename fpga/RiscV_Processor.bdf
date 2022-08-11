@@ -206,6 +206,40 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1376 632 1440 648))
 )
+(pin
+	(output)
+	(rect 320 496 496 512)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "reset_out" (rect 90 0 136 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 496 512 552 528))
+)
+(pin
+	(output)
+	(rect 568 112 744 128)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "clk_out" (rect 90 0 125 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 744 128 800 144))
+)
 (symbol
 	(rect 784 208 960 384)
 	(text "mux6x1" (rect 5 0 43 12)(font "Arial" ))
@@ -463,16 +497,8 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt 304 224)
-	(pt 304 336)
-)
-(connector
 	(pt 544 224)
 	(pt 544 240)
-)
-(connector
-	(pt 480 224)
-	(pt 544 224)
 )
 (connector
 	(pt 328 312)
@@ -505,18 +531,6 @@ applicable agreement for further details.
 (connector
 	(pt 304 336)
 	(pt 240 336)
-)
-(connector
-	(pt 240 336)
-	(pt 232 336)
-)
-(connector
-	(pt 328 424)
-	(pt 232 424)
-)
-(connector
-	(pt 232 424)
-	(pt 224 424)
 )
 (connector
 	(pt 720 456)
@@ -706,6 +720,42 @@ applicable agreement for further details.
 	(pt 784 336)
 	(bus)
 )
+(connector
+	(pt 320 504)
+	(pt 280 504)
+)
+(connector
+	(pt 280 504)
+	(pt 280 424)
+)
+(connector
+	(pt 232 424)
+	(pt 280 424)
+)
+(connector
+	(pt 280 424)
+	(pt 328 424)
+)
+(connector
+	(pt 304 224)
+	(pt 304 336)
+)
+(connector
+	(pt 568 120)
+	(pt 504 120)
+)
+(connector
+	(pt 504 120)
+	(pt 504 224)
+)
+(connector
+	(pt 480 224)
+	(pt 504 224)
+)
+(connector
+	(pt 504 224)
+	(pt 544 224)
+)
 (junction (pt 328 312))
-(junction (pt 240 336))
-(junction (pt 232 424))
+(junction (pt 280 424))
+(junction (pt 504 224))
