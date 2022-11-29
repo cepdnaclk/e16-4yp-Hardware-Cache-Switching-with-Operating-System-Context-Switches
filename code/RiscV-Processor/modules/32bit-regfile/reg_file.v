@@ -42,11 +42,11 @@ module reg_file (OUT1, OUT2, IN, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK
 		OUT2 <= Register[OUT2ADDRESS];		//assign
 	end
 
-	assign reg0_output=Register[0];
-	assign reg1_output=Register[1];
-	assign reg2_output=Register[2];
-	assign reg3_output=Register[3];
-	assign reg4_output=Register[4];
+	assign reg0_output=Register[1];
+	assign reg1_output=Register[2];
+	assign reg2_output=Register[6];
+	assign reg3_output=Register[7];
+	assign reg4_output=Register[8];
 	assign reg5_output=Register[5];
 	assign reg6_output=Register[6];
 
