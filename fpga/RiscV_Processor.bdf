@@ -225,7 +225,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 568 112 744 128)
+	(rect 568 64 744 80)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "clk_out" (rect 90 0 125 12)(font "Arial" ))
 	(pt 0 8)
@@ -255,6 +255,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1722 136 1778 152))
 )
 (pin
 	(output)
@@ -271,6 +272,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1720 152 1776 168))
 )
 (pin
 	(output)
@@ -287,6 +289,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1720 168 1776 184))
 )
 (pin
 	(output)
@@ -303,6 +306,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1720 184 1776 200))
 )
 (symbol
 	(rect 784 208 960 384)
@@ -561,7 +565,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1256 96 1504 208)
+	(rect 1256 72 1504 184)
 	(text "lcd_display" (rect 5 0 60 12)(font "Arial" ))
 	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -641,7 +645,7 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 232 96))
 	)
-	(annotation_block (parameter)(rect 1504 8 1704 96))
+	(annotation_block (parameter)(rect 1504 -16 1704 72))
 )
 (symbol
 	(rect 1032 128 1216 208)
@@ -665,16 +669,12 @@ applicable agreement for further details.
 		(pt 184 32)
 		(output)
 		(text "out[47..0]" (rect 0 0 47 12)(font "Arial" ))
-		(text "out[47..0]" (rect 124 27 171 39)(font "Arial" ))
+		(text "out[47..0]" (rect 124 27 163 39)(font "Arial" ))
 		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 168 64))
 	)
-)
-(connector
-	(pt 544 224)
-	(pt 544 240)
 )
 (connector
 	(pt 328 312)
@@ -691,14 +691,6 @@ applicable agreement for further details.
 (connector
 	(pt 320 312)
 	(pt 328 312)
-)
-(connector
-	(pt 328 312)
-	(pt 544 312)
-)
-(connector
-	(pt 304 224)
-	(pt 328 224)
 )
 (connector
 	(pt 320 240)
@@ -885,22 +877,6 @@ applicable agreement for further details.
 	(pt 304 336)
 )
 (connector
-	(pt 568 120)
-	(pt 504 120)
-)
-(connector
-	(pt 504 120)
-	(pt 504 224)
-)
-(connector
-	(pt 480 224)
-	(pt 504 224)
-)
-(connector
-	(pt 504 224)
-	(pt 544 224)
-)
-(connector
 	(pt 744 240)
 	(pt 784 240)
 	(bus)
@@ -966,26 +942,122 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1216 160)
-	(pt 1256 160)
+	(pt 504 72)
+	(pt 568 72)
+)
+(connector
+	(pt 504 224)
+	(pt 504 72)
+)
+(connector
+	(pt 480 224)
+	(pt 504 224)
+)
+(connector
+	(pt 1536 128)
+	(pt 1536 104)
 	(bus)
 )
 (connector
-	(pt 1504 128)
 	(pt 1544 128)
+	(pt 1536 128)
 	(bus)
 )
 (connector
-	(pt 1504 144)
+	(pt 1536 104)
+	(pt 1504 104)
+	(bus)
+)
+(connector
+	(pt 1528 144)
+	(pt 1528 120)
+)
+(connector
 	(pt 1544 144)
+	(pt 1528 144)
 )
 (connector
-	(pt 1504 160)
+	(pt 1528 120)
+	(pt 1504 120)
+)
+(connector
+	(pt 1224 160)
+	(pt 1224 136)
+	(bus)
+)
+(connector
+	(pt 1216 160)
+	(pt 1224 160)
+	(bus)
+)
+(connector
+	(pt 1224 136)
+	(pt 1256 136)
+	(bus)
+)
+(connector
+	(pt 1520 160)
+	(pt 1520 136)
+)
+(connector
 	(pt 1544 160)
+	(pt 1520 160)
 )
 (connector
-	(pt 1504 176)
+	(pt 1520 136)
+	(pt 1504 136)
+)
+(connector
+	(pt 1512 176)
+	(pt 1512 152)
+)
+(connector
 	(pt 1544 176)
+	(pt 1512 176)
+)
+(connector
+	(pt 1512 152)
+	(pt 1504 152)
+)
+(connector
+	(pt 544 224)
+	(pt 544 240)
+)
+(connector
+	(pt 1256 120)
+	(pt 512 120)
+)
+(connector
+	(pt 272 104)
+	(pt 1256 104)
+)
+(connector
+	(pt 272 224)
+	(pt 272 104)
+)
+(connector
+	(pt 272 224)
+	(pt 304 224)
+)
+(connector
+	(pt 304 224)
+	(pt 328 224)
+)
+(connector
+	(pt 328 312)
+	(pt 544 312)
+)
+(connector
+	(pt 512 120)
+	(pt 512 224)
+)
+(connector
+	(pt 504 224)
+	(pt 512 224)
+)
+(connector
+	(pt 512 224)
+	(pt 544 224)
 )
 (junction (pt 328 312))
 (junction (pt 280 424))
@@ -994,3 +1066,5 @@ applicable agreement for further details.
 (junction (pt 1000 240))
 (junction (pt 248 336))
 (junction (pt 240 424))
+(junction (pt 304 224))
+(junction (pt 512 224))

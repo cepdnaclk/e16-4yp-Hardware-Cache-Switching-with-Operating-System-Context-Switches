@@ -153,7 +153,6 @@ set_global_assignment -name VERILOG_FILE supportive_modules/freqency_devider.v
 set_global_assignment -name VERILOG_FILE supportive_modules/mux.v
 set_global_assignment -name SOURCE_FILE hex_memory_file.mem
 set_global_assignment -name VERILOG_FILE supportive_modules/mux_16_bit_2x1.v
-set_global_assignment -name VERILOG_FILE supportive_modules/test.v
 set_location_assignment PIN_M5 -to LCD_DATA[7]
 set_location_assignment PIN_M3 -to LCD_DATA[6]
 set_location_assignment PIN_K2 -to LCD_DATA[5]
