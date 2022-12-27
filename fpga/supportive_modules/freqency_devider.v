@@ -8,7 +8,7 @@ begin
 		out_clk <= 1'b0;
 	end
 	else begin
-		if(counter==15000000)
+		if(counter==20002000)
 		begin
 			counter <=32'd0;
 			out_clk <= ~out_clk;
