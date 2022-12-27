@@ -34,10 +34,12 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+
 	(annotation_block (location)(rect 16 344 72 360))
 )
 (pin
 	(input)
+
 	(rect 64 416 232 432)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "reset" (rect 5 0 29 12)(font "Arial" ))
@@ -55,6 +57,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
+
 	(rect 552 448 720 464)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "select[2..0]" (rect 5 0 60 12)(font "Arial" ))
@@ -68,6 +71,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+
 	(annotation_block (location)(rect 488 464 552 480))
 )
 (pin
@@ -206,6 +210,7 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1376 632 1440 648))
 )
+
 (symbol
 	(rect 784 208 960 384)
 	(text "mux6x1" (rect 5 0 43 12)(font "Arial" ))
@@ -462,17 +467,7 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 176 192))
 	)
 )
-(connector
-	(pt 304 224)
-	(pt 304 336)
-)
-(connector
-	(pt 544 224)
-	(pt 544 240)
-)
-(connector
-	(pt 480 224)
-	(pt 544 224)
+
 )
 (connector
 	(pt 328 312)
@@ -503,6 +498,7 @@ applicable agreement for further details.
 	(pt 328 240)
 )
 (connector
+
 	(pt 304 336)
 	(pt 240 336)
 )
@@ -523,7 +519,7 @@ applicable agreement for further details.
 	(pt 784 456)
 	(bus)
 )
-(connector
+
 	(pt 784 352)
 	(pt 784 456)
 	(bus)
@@ -544,6 +540,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+
 	(pt 744 240)
 	(pt 784 240)
 	(bus)
@@ -554,6 +551,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+
 	(pt 544 240)
 	(pt 552 240)
 )
@@ -568,11 +566,13 @@ applicable agreement for further details.
 )
 (connector
 	(pt 1000 416)
+
 	(pt 1000 240)
 	(bus)
 )
 (connector
 	(pt 1000 416)
+
 	(pt 856 416)
 	(bus)
 )
@@ -706,6 +706,8 @@ applicable agreement for further details.
 	(pt 784 336)
 	(bus)
 )
+
 (junction (pt 328 312))
 (junction (pt 240 336))
 (junction (pt 232 424))
+

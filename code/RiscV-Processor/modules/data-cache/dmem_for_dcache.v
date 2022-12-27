@@ -22,9 +22,11 @@ output reg      	busywait;
 //Declare memory array 1024x8-bits 
 reg [7:0] memory_array [1023:0];
 
+
 //Detecting an incoming memory access
 reg [3:0]counter;
 reg readaccess, writeaccess;
+
 
 always @(*)
 begin
@@ -32,6 +34,7 @@ begin
 	readaccess <= (read && !write)? 1'b1 : 1'b0;
 	writeaccess <= (!read && write)? 1'b1 : 1'b0;
 end
+
 
 
 always @(posedge clock,posedge reset) begin
@@ -122,6 +125,7 @@ begin
         // readdata[119:112] = #40 memory_array[{address,4'b1110}];
         // readdata[127:120] = #40 memory_array[{address,4'b1111}];
 		//busywait = 0;
+
 	// end
 	// else if(writeaccess)
 	// begin
@@ -176,6 +180,7 @@ begin
             end
         endcase
         // counter = counter+4'b0001;
+
         //busywait = 1;
 		// memory_array[{address,4'b0000}] = #40 writedata[7:0]    ;
         // memory_array[{address,4'b0001}] = #40 writedata[15:8]   ;
@@ -194,7 +199,9 @@ begin
         // memory_array[{address,4'b1110}] = #40 writedata[119:112];
         // memory_array[{address,4'b1111}] = #40 writedata[127:120];
 		//busywait = 0;
+
 	// end
+
 end
 
 //Reset memory

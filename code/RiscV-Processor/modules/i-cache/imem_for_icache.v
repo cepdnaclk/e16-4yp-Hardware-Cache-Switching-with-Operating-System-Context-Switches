@@ -154,6 +154,7 @@ begin
             end 
         endcase
         // counter = counter+4'b0001;
+
         // readdata[15:8]    <=  memory_array[{address[27:0],4'b0001}];
         // readdata[23:16]   <=  memory_array[{address[27:0],4'b0010}];
         // readdata[31:24]   <=  memory_array[{address[27:0],4'b0011}];
@@ -170,7 +171,9 @@ begin
         // readdata[119:112] <=  memory_array[{address[27:0],4'b1110}];
         // readdata[127:120] <=  memory_array[{address[27:0],4'b1111}];
         
+
     // end
+
 end
  
 endmodule

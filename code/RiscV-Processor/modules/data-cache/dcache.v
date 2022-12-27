@@ -86,8 +86,29 @@ module dcache (
             dirty_bits[address[6:4]]<=1;
             valid_bits[address[6:4]]<=1;
             tags[address[6:4]]<=address[31:7];
+            case (address[3:2])
+                2'b00:begin
+                    {word[address[6:4]][3],word[address[6:4]][2],word[address[6:4]][1]}<=mem_readdata[127:32];
+                    word[address[6:4]][address[3:2]]<=writedata;
+                end
+                2'b01:begin
+                    {word[address[6:4]][3],word[address[6:4]][2],word[address[6:4]][0]}<={mem_readdata[127:64],mem_readdata[31:0]};
+                    word[address[6:4]][address[3:2]]<=writedata;
+                end
+                2'b10:begin
+                    {word[address[6:4]][3],word[address[6:4]][1],word[address[6:4]][0]}<={mem_readdata[127:96],mem_readdata[63:0]};
+                    word[address[6:4]][address[3:2]]<=writedata;
+                end
+                2'b11:begin
+                    {word[address[6:4]][2],word[address[6:4]][1],word[address[6:4]][0]}<=mem_readdata[95:0];
+                    word[address[6:4]][address[3:2]]<=writedata;
+                end
+            endcase
+            /*
             {word[address[6:4]][3],word[address[6:4]][2],word[address[6:4]][1],word[address[6:4]][0]}<=mem_readdata;
             word[address[6:4]][address[3:2]]<=writedata;
+            */
+
 
         end
 

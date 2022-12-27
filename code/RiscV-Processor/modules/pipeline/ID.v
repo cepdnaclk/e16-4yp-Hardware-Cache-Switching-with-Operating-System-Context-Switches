@@ -47,7 +47,7 @@ module ID(
 
   always @(posedge clk,posedge reset)
   begin
-    #1
+
     if(reset)begin
 
       rotate_signal_out <=  1'b0;

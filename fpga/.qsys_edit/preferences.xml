@@ -9,6 +9,7 @@
  </systemtable>
  <clocktable>
   <columns>
+
    <clockname preferredWidth="269" />
    <clocksource preferredWidth="269" />
    <frequency preferredWidth="250" />

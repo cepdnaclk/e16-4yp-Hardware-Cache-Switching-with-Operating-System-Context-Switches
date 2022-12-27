@@ -58,6 +58,7 @@ set_location_assignment PIN_AC28 -to select[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
 set_global_assignment -name VERILOG_FILE supportive_modules/ss_4bit_generator.v
 set_global_assignment -name VERILOG_FILE supportive_modules/seven_segment_panel.v
 set_global_assignment -name VERILOG_FILE supportive_modules/mylogic.v
@@ -91,6 +92,7 @@ set_global_assignment -name VERILOG_FILE supportive_modules/freqency_devider.v
 set_global_assignment -name VERILOG_FILE supportive_modules/mux.v
 set_global_assignment -name SOURCE_FILE hex_memory_file.mem
 set_global_assignment -name VERILOG_FILE supportive_modules/mux_16_bit_2x1.v
+
 set_location_assignment PIN_G18 -to ss0_[0]
 set_location_assignment PIN_F22 -to ss0_[1]
 set_location_assignment PIN_E17 -to ss0_[2]
@@ -149,4 +151,5 @@ set_location_assignment PIN_AG18 -to ss7_[5]
 set_location_assignment PIN_AA14 -to ss7_[6]
 set_global_assignment -name VERILOG_FILE supportive_modules/test.v
 set_location_assignment PIN_M21 -to push
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
