@@ -79,22 +79,30 @@ end
 //Detecting an incoming memory access
 
 
-always @(read)
+always @(*)
 begin
     busywait <= (read && counter!=4'b1111)? 1 : 0;
     readaccess <= (read)? 1'b1 : 1'b0;
 end
 
-
-//Reading
-always @(posedge clock,posedge reset)
-begin
-    if(reset)begin
+always @(posedge clock,posedge reset) begin
+    if (reset) begin
         counter <= 4'b0000;
-       
     end
     else if(readaccess)
     begin
+        counter <= counter+4'b0001;
+    end
+end
+//Reading
+always @(posedge clock,posedge reset)
+begin
+    // if(reset)begin
+    //     counter <= 4'b0000;
+       
+    // end
+    // else if(readaccess)
+    // begin
         case (counter)
             4'b0000:begin
                 readdata[7:0]=memory_array[{address[27:0],counter}];
@@ -145,7 +153,7 @@ begin
                 readdata[127:120]=memory_array[{address[27:0],counter}];
             end 
         endcase
-        counter = counter+4'b0001;
+        // counter = counter+4'b0001;
         // readdata[15:8]    <=  memory_array[{address[27:0],4'b0001}];
         // readdata[23:16]   <=  memory_array[{address[27:0],4'b0010}];
         // readdata[31:24]   <=  memory_array[{address[27:0],4'b0011}];
@@ -162,7 +170,7 @@ begin
         // readdata[119:112] <=  memory_array[{address[27:0],4'b1110}];
         // readdata[127:120] <=  memory_array[{address[27:0],4'b1111}];
         
-    end
+    // end
 end
  
 endmodule

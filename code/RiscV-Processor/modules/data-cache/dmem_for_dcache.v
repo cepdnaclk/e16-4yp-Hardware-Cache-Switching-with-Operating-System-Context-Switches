@@ -25,7 +25,8 @@ reg [7:0] memory_array [1023:0];
 //Detecting an incoming memory access
 reg [3:0]counter;
 reg readaccess, writeaccess;
-always @(read, write)
+
+always @(*)
 begin
 	busywait <= ((read || write)&& counter!=4'b1111)? 1 : 0;
 	readaccess <= (read && !write)? 1'b1 : 1'b0;
@@ -33,14 +34,24 @@ begin
 end
 
 
+always @(posedge clock,posedge reset) begin
+    if (reset) begin
+        counter <= 4'b0000;
+    end
+    else if(readaccess || writeaccess)
+    begin
+        counter <= counter+4'b0001;
+    end
+end
+
 //Reading & writing
 always @(posedge clock,posedge reset)
 begin
-    if(reset)begin
-        counter <= 4'b0000;
-    end
-	else if(readaccess )
-	begin
+    // if(reset)begin
+    //     counter <= 4'b0000;
+    // end
+	// else if(readaccess )
+	// begin
         
         case (counter)
             4'b0000:begin
@@ -92,7 +103,7 @@ begin
                 readdata[127:120]=memory_array[{address[27:0],counter}];
             end 
         endcase
-        counter = counter+4'b0001;
+        // counter = counter+4'b0001;
         //busywait =1 ;
 		// readdata[7:0]     = #40 memory_array[{address,4'b0000}];
         // readdata[15:8]    = #40 memory_array[{address,4'b0001}];
@@ -111,9 +122,9 @@ begin
         // readdata[119:112] = #40 memory_array[{address,4'b1110}];
         // readdata[127:120] = #40 memory_array[{address,4'b1111}];
 		//busywait = 0;
-	end
-	else if(writeaccess)
-	begin
+	// end
+	// else if(writeaccess)
+	// begin
         case (counter)
             4'b0000:begin
                 memory_array[{address[27:0],counter}]=writedata[7:0];
@@ -164,7 +175,7 @@ begin
                 memory_array[{address[27:0],counter}]=writedata[127:120];
             end
         endcase
-        counter = counter+4'b0001;
+        // counter = counter+4'b0001;
         //busywait = 1;
 		// memory_array[{address,4'b0000}] = #40 writedata[7:0]    ;
         // memory_array[{address,4'b0001}] = #40 writedata[15:8]   ;
@@ -183,7 +194,7 @@ begin
         // memory_array[{address,4'b1110}] = #40 writedata[119:112];
         // memory_array[{address,4'b1111}] = #40 writedata[127:120];
 		//busywait = 0;
-	end
+	// end
 end
 
 //Reset memory

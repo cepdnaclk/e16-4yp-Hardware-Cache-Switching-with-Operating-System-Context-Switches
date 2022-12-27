@@ -27,7 +27,8 @@ always @(*) begin
 end
 
 always @(posedge clock,posedge reset) begin //update the pc value depend on the positive clock edge
-	 if(reset)begin
+	 #2
+     if(reset)begin
 		PC <= -4;
 	 end
     else if(busywait == 1'b0)begin //update the pc when only busywait is zero 
