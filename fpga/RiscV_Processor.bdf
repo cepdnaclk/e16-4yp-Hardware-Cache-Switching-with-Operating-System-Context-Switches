@@ -21,53 +21,57 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 72 328 248 344)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "clock" (rect 9 0 34 12)(font "Arial" ))
-	(pt 176 8)
+	(rect 72 328 240 344)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clock" (rect 5 0 30 12)(font "Arial" ))
+	(pt 168 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12))
-		(line (pt 92 4)(pt 117 4))
-		(line (pt 121 8)(pt 176 8))
-		(line (pt 92 12)(pt 92 4))
-		(line (pt 117 4)(pt 121 8))
-		(line (pt 117 12)(pt 121 8))
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+
 	(annotation_block (location)(rect 16 344 72 360))
 )
 (pin
 	(input)
-	(rect 64 416 240 432)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "reset" (rect 9 0 33 12)(font "Arial" ))
-	(pt 176 8)
+
+	(rect 64 416 232 432)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "reset" (rect 5 0 29 12)(font "Arial" ))
+	(pt 168 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12))
-		(line (pt 92 4)(pt 117 4))
-		(line (pt 121 8)(pt 176 8))
-		(line (pt 92 12)(pt 92 4))
-		(line (pt 117 4)(pt 121 8))
-		(line (pt 117 12)(pt 121 8))
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 0 432 64 448))
 )
 (pin
 	(input)
-	(rect 552 448 728 464)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "select[2..0]" (rect 9 0 64 12)(font "Arial" ))
-	(pt 176 8)
+
+	(rect 552 448 720 464)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "select[2..0]" (rect 5 0 60 12)(font "Arial" ))
+	(pt 168 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12))
-		(line (pt 92 4)(pt 117 4))
-		(line (pt 121 8)(pt 176 8))
-		(line (pt 92 12)(pt 92 4))
-		(line (pt 117 4)(pt 121 8))
-		(line (pt 117 12)(pt 121 8))
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+
 	(annotation_block (location)(rect 488 464 552 480))
 )
 (pin
@@ -206,6 +210,7 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1376 632 1440 648))
 )
+<<<<<<< HEAD
 (pin
 	(output)
 	(rect 320 496 496 512)
@@ -308,6 +313,9 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1720 184 1776 200))
 )
+=======
+
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
 (symbol
 	(rect 784 208 960 384)
 	(text "mux6x1" (rect 5 0 43 12)(font "Arial" ))
@@ -564,6 +572,7 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 176 192))
 	)
 )
+<<<<<<< HEAD
 (symbol
 	(rect 1256 72 1504 184)
 	(text "lcd_display" (rect 5 0 60 12)(font "Arial" ))
@@ -675,6 +684,9 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 168 64))
 	)
+=======
+
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
 )
 (connector
 	(pt 328 312)
@@ -697,6 +709,28 @@ applicable agreement for further details.
 	(pt 328 240)
 )
 (connector
+
+	(pt 304 336)
+	(pt 240 336)
+)
+(connector
+	(pt 240 336)
+	(pt 232 336)
+)
+(connector
+	(pt 328 424)
+	(pt 232 424)
+)
+(connector
+	(pt 232 424)
+	(pt 224 424)
+)
+(connector
+	(pt 720 456)
+	(pt 784 456)
+	(bus)
+)
+
 	(pt 784 352)
 	(pt 784 456)
 	(bus)
@@ -717,6 +751,18 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+
+	(pt 744 240)
+	(pt 784 240)
+	(bus)
+)
+(connector
+	(pt 744 256)
+	(pt 784 256)
+	(bus)
+)
+(connector
+
 	(pt 544 240)
 	(pt 552 240)
 )
@@ -731,6 +777,13 @@ applicable agreement for further details.
 )
 (connector
 	(pt 1000 416)
+
+	(pt 1000 240)
+	(bus)
+)
+(connector
+	(pt 1000 416)
+
 	(pt 856 416)
 	(bus)
 )
@@ -864,6 +917,7 @@ applicable agreement for further details.
 	(pt 784 336)
 	(bus)
 )
+<<<<<<< HEAD
 (connector
 	(pt 320 504)
 	(pt 280 504)
@@ -1068,3 +1122,10 @@ applicable agreement for further details.
 (junction (pt 240 424))
 (junction (pt 304 224))
 (junction (pt 512 224))
+=======
+
+(junction (pt 328 312))
+(junction (pt 240 336))
+(junction (pt 232 424))
+
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
