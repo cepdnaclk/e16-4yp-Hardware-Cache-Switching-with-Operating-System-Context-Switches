@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="30" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="542" />
+   <clocksource preferredWidth="541" />
+   <frequency preferredWidth="523" />
+  </columns>
+ </clocktable>
+ <library expandedCategories="Library,Project" />
+ <window width="1920" height="1020" x="0" y="0" />
+ <hdlexample language="VERILOG" />
+ <generation
+   synthesis="1"
+   path="E:/aca/com/FYP/e16-4yp-Hardware-Cache-Switching-with-Operating-System-Context-Switches/fpga/_PROJECT_NAME_" />
+</preferences>
