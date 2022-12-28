@@ -1,3 +1,4 @@
+
 `include "../modules/units/instruction_execute_unit.v"
 `include "../modules/units/memory_access_unit.v"
 `include "../modules/units/instruction_fetch_unit.v"
@@ -31,6 +32,7 @@
 `include "../modules/cache-controller/Cache_controller.v"
 
 
+
 module cpu(
     input clk,
     input reset,
@@ -38,6 +40,7 @@ module cpu(
 	  output reg[31:0]pc,
     output reg[31:0]debug_ins
   );
+
 
   wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out,switch_cache_w;
   wire branch_or_jump_signal,data_memory_busywait,busywait;
@@ -57,11 +60,13 @@ module cpu(
   
   
 
+
   always @(*)
   begin
     pc<=pc_instruction_fetch_unit_out;
     debug_ins<=instruction_instruction_fetch_unit_out;
   end
+
 
 
   instruction_fetch_unit if_unit(
@@ -221,6 +226,7 @@ module cpu(
     write_data,
     fun_3_id_unit_out,
     switch_cache_w
+
     );
 
 endmodule

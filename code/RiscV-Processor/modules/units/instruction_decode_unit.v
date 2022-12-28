@@ -45,6 +45,7 @@ module instruction_decode_unit (
   assign fun_3=instration[14:12];
   assign rotate_signal=instration[30];
   
+
   control control_unit(switch_cache_w,d_mem_r, d_mem_w, jump, branch, write_reg_en, mux_d_mem, mux_result, mux_inp_2, mux_complmnt, mux_inp_1, mux_wire_module, alu_op, instration[6:0], instration[14:12], instration[31:25]); 
   reg_file register_file(data_1, data_2, data_in, write_address_from_pre, instration[19:15], instration[24:20], write_reg_enable_signal_from_pre, clk, reset,reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output);
   Wire_module wire_module(instration,B_imm, J_imm, S_imm, U_imm, I_imm);

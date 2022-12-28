@@ -4,6 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
+
 		Device PartName(EP4CE115F29) Path("E:/Risc/e16-4yp-Hardware-Cache-Switching-with-Operating-System-Context-Switches/fpga/output_files/") File("RiscV_Processor.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
