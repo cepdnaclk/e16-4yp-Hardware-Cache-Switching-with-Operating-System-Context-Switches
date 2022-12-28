@@ -138,17 +138,37 @@ begin
 	LCD_INTIAL+3:	LUT_DATA	<=	9'h006;
 	LCD_INTIAL+4:	LUT_DATA	<=	9'h080;
 	//	Line 1
-	LCD_LINE1+0:	LUT_DATA	<=	9'h130;	//	0
-	LCD_LINE1+1:	LUT_DATA	<=	9'h17e;  // >
-	LCD_LINE1+2:	LUT_DATA	<=	char2;
-	LCD_LINE1+3:	LUT_DATA	<=	char1;  
-	LCD_LINE1+4:	LUT_DATA	<=	9'h1ff;	//	||
-	LCD_LINE1+5:	LUT_DATA	<=	9'h131;  // 1
-	LCD_LINE1+6:	LUT_DATA	<=	9'h17e;  // >
-	LCD_LINE1+7:	LUT_DATA	<=	char4;
-	LCD_LINE1+8:	LUT_DATA	<=	char3;
-	LCD_LINE1+9:	LUT_DATA	<=	9'h1ff;  // ||
-	LCD_LINE1+10:	LUT_DATA	<=	9'h132;	//	2
+	// LCD_LINE1+0:	LUT_DATA	<=	9'h130;	//	0
+	// LCD_LINE1+1:	LUT_DATA	<=	9'h17e;  // >
+	LCD_LINE1+1:	LUT_DATA	<=	char8;
+	LCD_LINE1+2:	LUT_DATA	<=	char7;  
+	
+	LCD_LINE1+3:	LUT_DATA	<=	char6;
+	LCD_LINE1+4:	LUT_DATA	<=	char5;
+	LCD_LINE1+5:	LUT_DATA	<=	char4;
+	LCD_LINE1+6:	LUT_DATA	<=	char3;
+	LCD_LINE1+7:	LUT_DATA	<=	char2;
+	LCD_LINE1+8:	LUT_DATA	<=	char1;
+	
+	// LCD_LINE1+2:	LUT_DATA	<=	char2;
+	// LCD_LINE1+3:	LUT_DATA	<=	char1;  
+	
+	// LCD_LINE1+4:	LUT_DATA	<=	9'h1ff;	//	||
+	// LCD_LINE1+5:	LUT_DATA	<=	9'h131;  // 1
+	// LCD_LINE1+6:	LUT_DATA	<=	9'h17e;  // >
+	// LCD_LINE1+7:	LUT_DATA	<=	char4;
+	// LCD_LINE1+8:	LUT_DATA	<=	char3;
+	// LCD_LINE1+9:	LUT_DATA	<=	9'h1ff;  // ||
+
+	
+	// LCD_LINE1+4:	LUT_DATA	<=	9'h1ff;	//	||
+	// LCD_LINE1+5:	LUT_DATA	<=	9'h131;  // 1
+	// LCD_LINE1+6:	LUT_DATA	<=	9'h17e;  // >
+	// LCD_LINE1+7:	LUT_DATA	<=	char4;
+	// LCD_LINE1+8:	LUT_DATA	<=	char3;
+	// LCD_LINE1+9:	LUT_DATA	<=	9'h1ff;  // ||
+	
+	LCD_LINE1+10:	LUT_DATA	<=	9'h1ff;	//	2
 	LCD_LINE1+11:	LUT_DATA	<=	9'h17e;  // >
 	LCD_LINE1+12:	LUT_DATA	<=	char6;
 	LCD_LINE1+13:	LUT_DATA	<=	char5;

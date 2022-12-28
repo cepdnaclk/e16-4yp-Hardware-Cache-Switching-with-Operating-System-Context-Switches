@@ -210,7 +210,112 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1376 632 1440 648))
 )
+<<<<<<< HEAD
+(pin
+	(output)
+	(rect 320 496 496 512)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "reset_out" (rect 90 0 136 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 496 512 552 528))
+)
+(pin
+	(output)
+	(rect 568 64 744 80)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "clk_out" (rect 90 0 125 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 744 128 800 144))
+)
+(pin
+	(output)
+	(rect 1544 120 1722 136)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_DATA[7..0]" (rect 90 0 172 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1722 136 1778 152))
+)
+(pin
+	(output)
+	(rect 1544 136 1720 152)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_RW" (rect 90 0 137 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1720 152 1776 168))
+)
+(pin
+	(output)
+	(rect 1544 152 1720 168)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_EN" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1720 168 1776 184))
+)
+(pin
+	(output)
+	(rect 1544 168 1720 184)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_RS" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1720 184 1776 200))
+)
+=======
 
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
 (symbol
 	(rect 784 208 960 384)
 	(text "mux6x1" (rect 5 0 43 12)(font "Arial" ))
@@ -467,7 +572,121 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 176 192))
 	)
 )
+<<<<<<< HEAD
+(symbol
+	(rect 1256 72 1504 184)
+	(text "lcd_display" (rect 5 0 60 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "iCLK" (rect 0 0 23 12)(font "Arial" ))
+		(text "iCLK" (rect 21 27 44 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "iRST_N" (rect 0 0 37 12)(font "Arial" ))
+		(text "iRST_N" (rect 21 43 58 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "debug_data[47..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "debug_data[47..0]" (rect 21 59 109 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "LCD_DATA[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "LCD_DATA[7..0]" (rect 158 27 240 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "LCD_RW" (rect 0 0 47 12)(font "Arial" ))
+		(text "LCD_RW" (rect 188 43 235 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "LCD_EN" (rect 0 0 43 12)(font "Arial" ))
+		(text "LCD_EN" (rect 191 59 234 71)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "LCD_RS" (rect 0 0 43 12)(font "Arial" ))
+		(text "LCD_RS" (rect 191 75 234 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80))
+	)
+	(parameter
+		"LCD_INTIAL"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_LINE1"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_CH_LINE"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_LINE2"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LUT_SIZE"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 232 96))
+	)
+	(annotation_block (parameter)(rect 1504 -16 1704 72))
+)
+(symbol
+	(rect 1032 128 1216 208)
+	(text "mux_lcd_test" (rect 5 0 71 12)(font "Arial" ))
+	(text "inst3" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reg1[31..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "reg1[31..0]" (rect 21 27 74 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg2[31..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "reg2[31..0]" (rect 21 43 74 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "out[47..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "out[47..0]" (rect 124 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 64))
+	)
+=======
 
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
 )
 (connector
 	(pt 328 312)
@@ -484,14 +703,6 @@ applicable agreement for further details.
 (connector
 	(pt 320 312)
 	(pt 328 312)
-)
-(connector
-	(pt 328 312)
-	(pt 544 312)
-)
-(connector
-	(pt 304 224)
-	(pt 328 224)
 )
 (connector
 	(pt 320 240)
@@ -706,8 +917,215 @@ applicable agreement for further details.
 	(pt 784 336)
 	(bus)
 )
+<<<<<<< HEAD
+(connector
+	(pt 320 504)
+	(pt 280 504)
+)
+(connector
+	(pt 280 504)
+	(pt 280 424)
+)
+(connector
+	(pt 304 224)
+	(pt 304 336)
+)
+(connector
+	(pt 744 240)
+	(pt 784 240)
+	(bus)
+)
+(connector
+	(pt 760 256)
+	(pt 760 176)
+	(bus)
+)
+(connector
+	(pt 760 176)
+	(pt 1032 176)
+	(bus)
+)
+(connector
+	(pt 744 256)
+	(pt 760 256)
+	(bus)
+)
+(connector
+	(pt 760 256)
+	(pt 784 256)
+	(bus)
+)
+(connector
+	(pt 1000 160)
+	(pt 1000 240)
+	(bus)
+)
+(connector
+	(pt 1000 240)
+	(pt 1000 416)
+	(bus)
+)
+(connector
+	(pt 1032 160)
+	(pt 1000 160)
+	(bus)
+)
+(connector
+	(pt 304 336)
+	(pt 248 336)
+)
+(connector
+	(pt 248 336)
+	(pt 240 336)
+)
+(connector
+	(pt 232 424)
+	(pt 240 424)
+)
+(connector
+	(pt 240 424)
+	(pt 280 424)
+)
+(connector
+	(pt 280 424)
+	(pt 328 424)
+)
+(connector
+	(pt 728 456)
+	(pt 784 456)
+	(bus)
+)
+(connector
+	(pt 504 72)
+	(pt 568 72)
+)
+(connector
+	(pt 504 224)
+	(pt 504 72)
+)
+(connector
+	(pt 480 224)
+	(pt 504 224)
+)
+(connector
+	(pt 1536 128)
+	(pt 1536 104)
+	(bus)
+)
+(connector
+	(pt 1544 128)
+	(pt 1536 128)
+	(bus)
+)
+(connector
+	(pt 1536 104)
+	(pt 1504 104)
+	(bus)
+)
+(connector
+	(pt 1528 144)
+	(pt 1528 120)
+)
+(connector
+	(pt 1544 144)
+	(pt 1528 144)
+)
+(connector
+	(pt 1528 120)
+	(pt 1504 120)
+)
+(connector
+	(pt 1224 160)
+	(pt 1224 136)
+	(bus)
+)
+(connector
+	(pt 1216 160)
+	(pt 1224 160)
+	(bus)
+)
+(connector
+	(pt 1224 136)
+	(pt 1256 136)
+	(bus)
+)
+(connector
+	(pt 1520 160)
+	(pt 1520 136)
+)
+(connector
+	(pt 1544 160)
+	(pt 1520 160)
+)
+(connector
+	(pt 1520 136)
+	(pt 1504 136)
+)
+(connector
+	(pt 1512 176)
+	(pt 1512 152)
+)
+(connector
+	(pt 1544 176)
+	(pt 1512 176)
+)
+(connector
+	(pt 1512 152)
+	(pt 1504 152)
+)
+(connector
+	(pt 544 224)
+	(pt 544 240)
+)
+(connector
+	(pt 1256 120)
+	(pt 512 120)
+)
+(connector
+	(pt 272 104)
+	(pt 1256 104)
+)
+(connector
+	(pt 272 224)
+	(pt 272 104)
+)
+(connector
+	(pt 272 224)
+	(pt 304 224)
+)
+(connector
+	(pt 304 224)
+	(pt 328 224)
+)
+(connector
+	(pt 328 312)
+	(pt 544 312)
+)
+(connector
+	(pt 512 120)
+	(pt 512 224)
+)
+(connector
+	(pt 504 224)
+	(pt 512 224)
+)
+(connector
+	(pt 512 224)
+	(pt 544 224)
+)
+(junction (pt 328 312))
+(junction (pt 280 424))
+(junction (pt 504 224))
+(junction (pt 760 256))
+(junction (pt 1000 240))
+(junction (pt 248 336))
+(junction (pt 240 424))
+(junction (pt 304 224))
+(junction (pt 512 224))
+=======
 
 (junction (pt 328 312))
 (junction (pt 240 336))
 (junction (pt 232 424))
 
+>>>>>>> 186b664ebc839653bbf732a0fcad24ea634eb336
