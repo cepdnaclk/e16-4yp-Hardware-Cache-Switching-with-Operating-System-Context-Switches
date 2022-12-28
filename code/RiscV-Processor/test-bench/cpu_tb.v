@@ -6,7 +6,8 @@ module cpuTestbench;
 
     reg CLK, RESET;
 
-    cpu mycpu(CLK,RESET);
+    wire [31:0] reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,pc,debug_ins;
+    cpu mycpu(CLK,RESET,reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,pc,debug_ins);
 
     always
         #5 CLK = ~CLK;
