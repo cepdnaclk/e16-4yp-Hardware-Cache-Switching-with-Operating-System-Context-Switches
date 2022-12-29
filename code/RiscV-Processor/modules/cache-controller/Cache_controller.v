@@ -22,6 +22,17 @@ module Cache_controller (
 
     wire [31:0] cache1_read_data,cache2_read_data,cache3_read_data,cache4_read_data;
     wire cache1_busywait,cache1_read,cache1_write,cache2_busywait,cache2_read,cache2_write,cache3_busywait,cache3_read,cache3_write,cache4_busywait,cache4_read,cache4_write;
+    reg mem_read,mem_write;
+    wire mem_busywait;
+    wire [127:0] mem_readdata;
+    reg [127:0] mem_writedata;
+    wire [127:0] cache_1_mem_writedata,cache_2_mem_writedata,cache_3_mem_writedata,cache_4_mem_writedata;
+    reg [27:0] mem_address;
+    wire [27:0] cache_1_mem_address,cache_2_mem_address,cache_3_mem_address,cache_4_mem_address;
+    wire cache_1_mem_read,cache_1_mem_write,cache_1_mem_busywait;
+    wire cache_2_mem_read,cache_2_mem_write,cache_2_mem_busywait;
+    wire cache_3_mem_read,cache_3_mem_write,cache_3_mem_busywait;
+    wire cache_4_mem_read,cache_4_mem_write,cache_4_mem_busywait;
 
     always @(posedge clock,posedge reset) begin
         if (reset) begin
@@ -44,10 +55,19 @@ module Cache_controller (
     and(cache4_read,read,cache4_select);
     and(cache4_write,write,cache4_select);
 
-    dcache dcache1(clock,reset,cache1_read,cache1_write,address,writedata,cache1_read_data,cache1_busywait);
-    dcache dcache2(clock,reset,cache2_read,cache2_write,address,writedata,cache2_read_data,cache2_busywait);
-    dcache dcache3(clock,reset,cache3_read,cache3_write,address,writedata,cache3_read_data,cache3_busywait);
-    dcache dcache4(clock,reset,cache4_read,cache4_write,address,writedata,cache4_read_data,cache4_busywait);
+    and(cache_1_mem_busywait,cache1_select,mem_busywait);
+    and(cache_2_mem_busywait,cache2_select,mem_busywait);
+    and(cache_3_mem_busywait,cache3_select,mem_busywait);
+    and(cache_4_mem_busywait,cache4_select,mem_busywait);
+
+    data_memory my_data_memory(clock,reset,mem_read,mem_write,mem_address,mem_writedata,mem_readdata,mem_busywait);
+
+
+    dcache dcache1(clock,reset,cache1_read,cache1_write,address,writedata,cache1_read_data,cache1_busywait,cache_1_mem_read,cache_1_mem_write,cache_1_mem_address,cache_1_mem_writedata,mem_readdata,cache_1_mem_busywait);
+    dcache dcache2(clock,reset,cache2_read,cache2_write,address,writedata,cache2_read_data,cache2_busywait,cache_2_mem_read,cache_2_mem_write,cache_2_mem_address,cache_2_mem_writedata,mem_readdata,cache_2_mem_busywait);
+    dcache dcache3(clock,reset,cache3_read,cache3_write,address,writedata,cache3_read_data,cache3_busywait,cache_3_mem_read,cache_3_mem_write,cache_3_mem_address,cache_2_mem_writedata,mem_readdata,cache_3_mem_busywait);
+    dcache dcache4(clock,reset,cache4_read,cache4_write,address,writedata,cache4_read_data,cache4_busywait,cache_4_mem_read,cache_4_mem_write,cache_4_mem_address,cache_2_mem_writedata,mem_readdata,cache_4_mem_busywait);
+
 
     always @(*) begin
         case(cache_switching_reg)
@@ -83,18 +103,34 @@ module Cache_controller (
             3'b001:begin
                 readdata <= cache1_read_data;
                 busywait <= cache1_busywait;
+                mem_read <= cache_1_mem_read;
+                mem_write <= cache_1_mem_write;
+                mem_address <= cache_1_mem_address;
+                mem_writedata <= cache_1_mem_writedata;
             end
             3'b010:begin
                 readdata <= cache2_read_data;
                 busywait <= cache2_busywait;
+                mem_read <= cache_2_mem_read;
+                mem_write <= cache_2_mem_write;
+                mem_address <= cache_2_mem_address;
+                mem_writedata <= cache_2_mem_writedata;
             end
             3'b011:begin
                 readdata <= cache3_read_data;
                 busywait <= cache3_busywait;
+                mem_read <= cache_3_mem_read;
+                mem_write <= cache_3_mem_write;
+                mem_address <= cache_3_mem_address;
+                mem_writedata <= cache_3_mem_writedata;
             end
             default:begin
                 readdata <= cache4_read_data;
                 busywait <= cache4_busywait;
+                mem_read <= cache_4_mem_read;
+                mem_write <= cache_4_mem_write;
+                mem_address <= cache_4_mem_address;
+                mem_writedata <= cache_4_mem_writedata;
             end
         endcase
     end
