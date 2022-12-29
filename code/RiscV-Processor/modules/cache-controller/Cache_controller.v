@@ -39,7 +39,7 @@ module Cache_controller (
     and(cache2_write,write,cache2_select);
 
     and(cache3_read,read,cache3_select);
-    and(cache1_write,write,cache1_select);
+    and(cache3_write,write,cache3_select);
 
     and(cache4_read,read,cache4_select);
     and(cache4_write,write,cache4_select);
