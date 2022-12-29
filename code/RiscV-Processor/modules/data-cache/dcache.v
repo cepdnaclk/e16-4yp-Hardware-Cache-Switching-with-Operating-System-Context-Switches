@@ -9,27 +9,33 @@ module dcache (
     address,
     writedata,
     readdata,
-	busywait
+	busywait,
+    mem_read,
+    mem_write,
+    mem_address,
+    mem_writedata,
+    mem_readdata,
+    mem_busywait
     );
 
     integer i;
-    input reset,read,write,clock;
+    input reset,read,write,clock,mem_busywait;
     input [31:0] address,writedata;
 
-    output reg busywait;
+    output reg busywait,mem_read,mem_write;
     output reg [31:0] readdata;
     
 
-    wire valid,dirty,mem_busywait;
-    wire [127:0] mem_readdata;
+    wire valid,dirty;
+    input [127:0] mem_readdata;
 
-    reg hit,mem_read,mem_write,write_from_mem;
+    reg hit,write_from_mem;
     reg valid_bits[0:7];
     reg dirty_bits[0:7];
     reg [24:0] tags[0:7];
     reg [31:0] word[0:7][0:3];
-    reg [27:0] mem_address;
-    reg [127:0] mem_writedata;
+    output reg [27:0] mem_address;
+    output reg [127:0] mem_writedata;
 
     
     /*
@@ -37,8 +43,6 @@ module dcache (
     ...
     ...
     */
-    data_memory my_data_memory(clock,reset,mem_read,mem_write,mem_address,mem_writedata,mem_readdata,mem_busywait);
-
     
     assign  valid=valid_bits[address[6:4]];
     assign  dirty=dirty_bits[address[6:4]];
