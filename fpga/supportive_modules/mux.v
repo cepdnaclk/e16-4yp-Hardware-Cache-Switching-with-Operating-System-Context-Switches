@@ -30,7 +30,7 @@ always @(*) begin
 		  3'b101:begin
             out<=in6;
         end
-		  3'b110:begin
+		  default:begin
             out<=in7;
         end
     endcase
