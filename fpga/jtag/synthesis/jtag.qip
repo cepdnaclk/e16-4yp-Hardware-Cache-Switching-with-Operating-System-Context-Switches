@@ -1,0 +1,18 @@
+set_global_assignment -entity "jtag" -library "jtag" -name IP_TOOL_NAME "qsys"
+set_global_assignment -entity "jtag" -library "jtag" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "jtag" -library "jtag" -name IP_TOOL_ENV "qsys"
+set_global_assignment -library "jtag" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../jtag.sopcinfo"]
+set_instance_assignment -entity "jtag" -library "jtag" -name SLD_INFO "QSYS_NAME jtag HAS_SOPCINFO 1 GENERATION_ID 1669709835"
+set_global_assignment -library "jtag" -name MISC_FILE [file join $::quartus(qip_path) "../jtag.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "jtag" -name MISC_FILE [file join $::quartus(qip_path) "../jtag.qsys"]
+
+set_global_assignment -library "jtag" -name VERILOG_FILE [file join $::quartus(qip_path) "jtag.v"]
+set_global_assignment -library "jtag" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/jtag_jtag_uart_0.v"]
+set_global_assignment -library "jtag" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/jtag_jtag_uart_0_input_mutex.dat"]
+set_global_assignment -library "jtag" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/jtag_jtag_uart_0_input_stream.dat"]
+set_global_assignment -library "jtag" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/jtag_jtag_uart_0_output_stream.dat"]
+
+set_global_assignment -entity "jtag_jtag_uart_0" -library "jtag" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
+set_global_assignment -entity "jtag_jtag_uart_0" -library "jtag" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "jtag_jtag_uart_0" -library "jtag" -name IP_TOOL_ENV "qsys"
