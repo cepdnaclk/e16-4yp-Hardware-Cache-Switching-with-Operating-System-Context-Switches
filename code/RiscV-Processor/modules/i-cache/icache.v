@@ -61,7 +61,7 @@ module icache (clock,
     end
 
    
-    always @(posedge clock,posedge reset) begin
+    always @(negedge clock,posedge reset) begin
         if(reset)begin
 			for (i =0 ;i<8 ;i = i+1 ) begin
                 valid_bits[i] <= 1'b0;
@@ -135,7 +135,7 @@ module icache (clock,
 
     // sequential logic for state transitioning 
     integer i;
-    always @(posedge clock, posedge reset)
+    always @(negedge clock, posedge reset)
     begin
         if(reset)begin
             state <= IDLE;
