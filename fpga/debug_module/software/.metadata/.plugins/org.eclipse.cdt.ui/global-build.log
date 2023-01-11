@@ -1,0 +1,112 @@
+
+**** Build of configuration Nios II for project debug_module ****
+
+make all 
+      1 [main] sh 11504 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 13132 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 17840 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Building ../debug_module_bsp/
+make --no-print-directory -C ../debug_module_bsp/
+      1 [main] pwd 12496 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 8860 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 11520 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      1 [main] echo 13060 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Compiling debug_module.c to obj/default/debug_module.o
+      1 [main] mkdir 11524 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../debug_module_bsp//HAL/inc -I../debug_module_bsp/ -I../debug_module_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/debug_module.o debug_module.c
+debug_module.c: In function 'main':
+debug_module.c:24: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+debug_module.c:24: warning: format '%lx' expects type 'long unsigned int', but argument 3 has type 'int'
+debug_module.c:24: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+debug_module.c:24: warning: format '%lx' expects type 'long unsigned int', but argument 3 has type 'int'
+debug_module.c:30: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+debug_module.c:30: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+debug_module.c:34: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+debug_module.c:34: warning: format '%lx' expects type 'long unsigned int', but argument 2 has type 'int'
+      1 [main] true 14548 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Linking debug_module.elf
+      1 [main] echo 1904 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../debug_module_bsp//linker.x' -msys-crt0='../debug_module_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../debug_module_bsp/   -Wl,-Map=debug_module.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o debug_module.elf obj/default/debug_module.o -lm 
+nios2-elf-insert debug_module.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1672759086 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name debug_module --quartus_project_dir "E:/aca/com/FYP/e16-4yp-Hardware-Cache-Switching-with-Operating-System-Context-Switches/fpga/debug_module" --sopcinfo E:/aca/com/FYP/e16-4yp-Hardware-Cache-Switching-with-Operating-System-Context-Switches/fpga/debug_module/debug_module.sopcinfo
+      1 [main] sh 5044 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] uname 3540 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 18680 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: (debug_module.elf) 59 KBytes program size (code + initialized data).
+Info:                    190 KBytes free for stack + heap.
+      1 [main] echo 16660 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Creating debug_module.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source debug_module.elf >debug_module.objdump
+      1 [main] sh 12696 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 12068 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[debug_module build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project debug_module ****
+
+make all 
+      1 [main] sh 7056 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 6272 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 5332 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../debug_module_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../debug_module_bsp/
+      1 [main] pwd 8588 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 19104 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 2956 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      1 [main] true 11336 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 17444 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[debug_module build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project debug_module ****
+
+make all 
+      1 [main] sh 17912 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 8884 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 17932 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Building ../debug_module_bsp/
+make --no-print-directory -C ../debug_module_bsp/
+      1 [main] pwd 1864 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 6828 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 1468 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      1 [main] true 6912 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 6332 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[debug_module build complete]
+
+**** Build Finished ****
