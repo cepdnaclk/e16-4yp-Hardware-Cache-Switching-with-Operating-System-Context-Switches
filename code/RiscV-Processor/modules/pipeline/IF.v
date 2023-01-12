@@ -8,7 +8,7 @@ module IF(pc_in, pc_4_in, instration_in, reset, clk,busywait,branch_jump_signal,
   
   always @(posedge clk,posedge reset)
   begin
-
+    // #1
     if(reset)begin
       pc_out <=32'd0;
       pc_4_out <=32'd0;

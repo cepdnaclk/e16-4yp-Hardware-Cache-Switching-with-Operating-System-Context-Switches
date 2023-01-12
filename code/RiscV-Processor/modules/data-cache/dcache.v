@@ -63,7 +63,7 @@ module dcache (
     end
 
    
-    always @(posedge clock,posedge reset) begin
+    always @(negedge clock,posedge reset) begin
 				
 		if(reset)begin
 				for (i =0 ;i<8 ;i = i + 1) begin
@@ -221,7 +221,7 @@ module dcache (
 
     // sequential logic for state transitioning 
    
-    always @(posedge clock, posedge reset)
+    always @(negedge clock, posedge reset)
     begin
         if(reset)begin
             state <= IDLE;

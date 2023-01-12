@@ -27,7 +27,7 @@ always @(*) begin
 end
 
 always @(posedge clock,posedge reset) begin //update the pc value depend on the positive clock edge
-
+    // #2
 	 if(reset)begin
 		PC <= -4;
 	 end
