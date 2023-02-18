@@ -42,7 +42,7 @@ module cpu(
   );
 
 
-  wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out,switch_cache_w;
+  wire d_mem_r_id_unit_out, d_mem_w_id_unit_out,branch_id_unit_out,jump_id_unit_out,write_reg_en_id_unit_out,mux_d_mem_id_unit_out,mux_inp_2_id_unit_out,mux_complmnt_id_unit_out,mux_inp_1_id_unit_out, rotate_signal_id_unit_out,switch_cache_w_id_unit_out,switch_cache_w_id_reg_out;
   wire branch_or_jump_signal,data_memory_busywait,busywait;
   wire [31:0] pc_instruction_fetch_unit_out,pc_4_instruction_fetch_unit_out,branch_jump_addres;
   wire [31:0]instruction_instruction_fetch_unit_out,pc_if_reg_out, pc_4_if_reg_out, instration_if_reg_out;
@@ -95,7 +95,7 @@ module cpu(
     );
 
   instruction_decode_unit id_unit(
-    switch_cache_w,
+    switch_cache_w_id_unit_out,
     reg0_output,reg1_output,reg2_output,reg3_output,reg4_output,reg5_output,reg6_output,
     write_address_for_current_instruction_id_unit_out,
     rotate_signal_id_unit_out,
@@ -124,6 +124,7 @@ module cpu(
 
   
   ID id_reg(
+  switch_cache_w_id_unit_out,
   rotate_signal_id_unit_out,
   d_mem_r_id_unit_out, 
 	d_mem_w_id_unit_out,
@@ -165,7 +166,8 @@ module cpu(
   mux_result_id_reg_out,
   write_address_id_reg_out,
   alu_op_id_reg_out, 
-  fun_3_id_reg_out
+  fun_3_id_reg_out,
+  switch_cache_w_id_reg_out
   );
 
   
@@ -224,9 +226,8 @@ module cpu(
     fun_3_ex_reg_out,
     data_memory_busywait,
     write_data,
-    fun_3_id_unit_out,
-    switch_cache_w
-
+    fun_3_id_reg_out,
+    switch_cache_w_id_reg_out
     );
 
 endmodule

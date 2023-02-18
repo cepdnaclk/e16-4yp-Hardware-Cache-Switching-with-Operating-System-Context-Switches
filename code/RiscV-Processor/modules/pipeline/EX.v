@@ -36,7 +36,7 @@ module EX(
   always @(posedge clk,posedge reset)
   begin
 
-
+    // #1
     if(reset)begin
       data_2_out <= 31'd0;
       result_mux_4_out <= 31'd0;
