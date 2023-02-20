@@ -56,7 +56,7 @@ In order to implement the cache bank system, we used a Switchable Cache develope
 
 ![Fig. 1](./images/1.png)
   
-      Fig 1 : Cache Architecture
+   Fig 1 : Cache Architecture
   
 As Fig. 1 indicates we have two multiplexers between the cache bank system and CPU, and the cache bank system and main memory. These are used to switch the cache banks as the os instructed to the cache controller system. In the four cache banks, we have dedicated one cache bank to  OS purposes. When the special instruction is executed and the signal is generated, the cache banks are switched using the multiplexers. Fig. 2 indicates, how the cache control system works.
 
