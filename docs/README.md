@@ -55,11 +55,13 @@ In our solution, we have a set of cache banks with different cache configuration
 In order to implement the cache bank system, we used a Switchable Cache developed by Nawinne et al.(2016) and developed it further to as our requirements. Fig. 1 gives an overview of the architecture of the proposed system.
 
 ![Fig. 1](./images/1.png)
+  
   Fig 1 : Cache Architecture
   
 As Fig. 1 indicates we have two multiplexers between the cache bank system and CPU, and the cache bank system and main memory. These are used to switch the cache banks as the os instructed to the cache controller system. In the four cache banks, we have dedicated one cache bank to  OS purposes. When the special instruction is executed and the signal is generated, the cache banks are switched using the multiplexers. Fig. 2 indicates, how the cache control system works.
 
 ![Fig. 2](./images/2.png)
+  
   Fig 2 : Cache Control System
   
 As Fig. 2 shows, we have  a control register which used to switch the caches and check the current cache. When the custom instruction which is added to ISA is executed on the CPU, it writes the control register. Depending on the value appropriate control signals are generated to switch the cache banks asynchronous. These signals are used by the multiplexers to switch the cache banks. The control register value is checked for the programmer to check the current cache bank status.
@@ -74,25 +76,28 @@ In order to experiment with the cache bank control system, we have to implement 
 The hardware simulation environment was designed using Verilog. We have designed separate instruction and data memory systems. In our system cache banks, data memory, and instruction memory is modeled as it gives real functionality and timing. The memory hierarchy and the complete system implementation are indicated in Fig. 3.
 
 ![Fig. 3](./images/3.png)
+  
   Fig 3 : Memory Hierarchy and the Complete System Implementation
   
 As indicated in Fig. 3, we have modeled the complete system in FPGA using the logic and flip-flop cells on the board. Switchable Cache, which was designed to improve the performance of a computer system. To optimize the cache for different applications, the cache cores were created with different cache configurations that suit the specific requirements of each application. A cache can be configured in a number of ways, including block size, set size, and associativity. These configuration options impact the performance of the cache, and the optimal configuration for a specific application is dependent on the memory access pattern of that application. In other words, different applications require different cache configurations in order to achieve the best possible performance. By creating cache cores with different configurations, the Switchable Cache is able to provide each application with the most suitable configuration, which helps to improve the overall performance of the system. 
 As shown in Fig. 4, we have implemented the five-stage pipeline processor.
 
 ![Fig. 4](./images/4.png)
+  
   Fig 4 : Five-stage Pipeline Processor
   
 In the pipeline processor, we have added a custom opcode to the instruction decode stage to generate the control signal to write the cache control register. We are getting cache values from the func3 field in the standard ISA instruction word as indicated in Fig. 5.
 
 ![Fig. 5](./images/5.png)
+  
   Fig 5 : Custom Instruction Format for Cache Switching
   
 We have to use the OS cache  as the default cache  and we have defined the cache bank selection values as indicated below
 
- -Cache OS - 000
- -Cache 01  - 001
- -Cache 02 - 010
- -Cache 03 - 011
+ - Cache OS - 000
+ - Cache 01  - 001
+ - Cache 02 - 010
+ - Cache 03 - 011
  
  
 One way to do this is by implementing a custom instruction decode stage in the pipeline. This allows the processor to recognize specific instructions, and execute them more efficiently.
@@ -102,7 +107,7 @@ In the software design, we implemented the assembly program sequence to add the 
 
 The below given high-level program indicates the assembly sequence we have used without using a switchable cache system and using a shared cache.
 
-//Frist Thread strating
+    //Frist Thread strating
     int a[8]={1,2,3,4,5,6,7,8};
     int b[8]={1,2,3,4,5,6,7,8};
     int result=0;
@@ -124,7 +129,7 @@ The below given high-level program indicates the assembly sequence we have used 
     result = result + (a[3] * b[3]);
 
 
-//Frist Thread strating
+    //Frist Thread strating
     int a[8]={1,2,3,4,5,6,7,8};
     int b[8]={1,2,3,4,5,6,7,8};
     int result=0;
@@ -147,7 +152,7 @@ The below given high-level program indicates the assembly sequence we have used 
 
 Below given high-level program indicates the assembly sequence we have used with using switchable cache system.
 
-switchCacheBank(1);
+    switchCacheBank(1);
     //Frist Thread strating
     int a[8]={1,2,3,4,5,6,7,8};
     int b[8]={1,2,3,4,5,6,7,8};
@@ -169,7 +174,7 @@ switchCacheBank(1);
     result = result + (a[1] * b[1]);
     result = result + (a[2] * b[2]);
     result = result + (a[3] * b[3]);
-//Save the context of secound thread to memory
+    //Save the context of secound thread to memory
     saveContext(contextAdress+32*4);
 
     switchCacheBank(1);
@@ -205,13 +210,14 @@ For the synthesis part, and for creating a netlist for FPGA we used “Quartus I
  1. Risc V pipeline processor and the memory system as described on the early sections
  2. Debugging unit: For easy debugging, the debugging unit was implemented. Using Quartus II Qsys, the debugging module was implemented. It was implemented with Nios 2 processor and PIO port. Each output was captured by debugging the module and shown in the Nios II software build tool. The debugging unit implemented using Quartus II Qsys consists of the following components:
 
- - Nios 2 Processor: The Nios 2 processor is a soft-core processor that is implemented on the FPGA. It is a general-purpose processor that can be programmed to perform various tasks.
+  - Nios 2 Processor: The Nios 2 processor is a soft-core processor that is implemented on the FPGA. It is a general-purpose processor that can be programmed to perform various tasks.
 
- - PIO Port: The PIO port is a programmable input/output block that can be used to interface with external devices. It can be programmed to handle various types of inputs and outputs, such as data, signals, and control signals.
+  - PIO Port: The PIO port is a programmable input/output block that can be used to interface with external devices. It can be programmed to handle various types of inputs and outputs, such as data, signals, and control signals.
 
- - Avalon Memory Mapped Interface (MMI): The Avalon MMI is a standard interface used to connect intellectual property (IP) blocks in Quartus II Qsys. The debugging module is connected to the Avalon MMI, which allows it to communicate with the other IP blocks in the system.
+  - Avalon Memory Mapped Interface (MMI): The Avalon MMI is a standard interface used to connect intellectual property (IP) blocks in Quartus II Qsys. The debugging module is connected to the Avalon MMI, which allows it to communicate with the other IP blocks in the system.
 
 ![Fig. 6](./images/6.png)
+  
   Fig 6 : Block Diagram of the System(in Quartus II)
 
   
