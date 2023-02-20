@@ -34,7 +34,7 @@ title: Hardware Cache Switching with Operating System Context Switches
 
 
 ![Sample Image](./images/sample.png)
-
+  Fig 1
 ## Abstract
 Caches are used to improve the speed and efficiency of memory access. However, the optimal cache configuration depends on the application's memory access patterns. When a context switch occurs, the cache data of the current thread must be flushed, and new data from the new thread loaded, which can increase memory access time and energy usage.
 
