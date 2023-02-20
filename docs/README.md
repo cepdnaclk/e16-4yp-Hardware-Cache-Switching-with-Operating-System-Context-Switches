@@ -41,6 +41,9 @@ This is a sample image, to show how to add images to your page. To learn more op
 ![Sample Image](./images/sample.png)
 
 ## Abstract
+Caches are used to improve the speed and efficiency of memory access. However, the optimal cache configuration depends on the application's memory access patterns. When a context switch occurs, the cache data of the current thread must be flushed, and new data from the new thread loaded, which can increase memory access time and energy usage.
+
+To improve cache performance, various techniques and methods have been developed. We propose cache partitioning, which divides the cache into multiple partitions. The program can choose the most suitable cache at runtime by executing special instructions. This method reduces the interference between the cache contents of different processes that led to minimizing the context switch overhead.
 
 ## Related works
 
