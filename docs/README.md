@@ -3,11 +3,9 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
-title:
----
+repository-name: e16-4yp-Hardware-Cache-Switching-with-Operating-System-Context-Switches
+title: Hardware Cache Switching with Operating System Context Switches
 
-[comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
 # Hardware-Cache-Switching-with-Operating-System-Context-Switches
 
@@ -36,7 +34,6 @@ title:
 
 ---
 
-This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
 
 ![Sample Image](./images/sample.png)
 
@@ -61,6 +58,7 @@ As we have seen earlier, cache flushing and reloading take significant cost. It 
 In our solution, we have a set of cache banks with different cache configurations. These configurations are predetermined in the design time. Our work facilitates the use of distinct cache configurations with the most optimal settings for application-specific chip programs. We achieve this by providing numerous cache banks with preconfigured cache settings, optimized for specific programs. Users can select the most appropriate cache configuration for a particular program by utilizing a special instruction that has been added to the ISA. These cache configurations are established during the design stage, with the most appropriate configurations selected for the predefined programs. Programmers can then instruct the system to use the appropriate cache configuration by using the aforementioned special instruction. In cases where there are more programs than cache banks or for general program cases, a specialized hardware unit is employed to handle the situation. Whenever there is a context switch at thread switching, our specialized hardware selects the previously used cache so that any existing data on the cache is not flushed. This ensures that the program can continue without the need to reload the data into the cache, thereby reducing memory access.
 In order to implement the cache bank system, we used a Switchable Cache developed by Nawinne et al.(2016) and developed it further to as our requirements. Fig. 1 gives an overview of the architecture of the proposed system.
 
+![Fig. 1](./images/sample.png)
 
 ## Experiment Setup and Implementation
 
