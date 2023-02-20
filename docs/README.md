@@ -30,7 +30,6 @@ title: Hardware Cache Switching with Operating System Context Switches
 7. [Publications](#publications)
 8. [Links](#links)
 
----
 
 
 ## Abstract
@@ -70,7 +69,7 @@ When the signal is received, the active cache core (which is the section of the 
 
 ## Experiment Setup and Implementation
 
-In order to experiment with the cache bank control system, we have to implement a system that can switch the cache banks. For this purpose, we have implemented a standard Risc V five-stage pipeline processor. We have added the custom instruction and the cache bank system to that. For the implementation, we have used Qurtus II  software to test the implementation on the FPGA. Also, we have two custom assembly programs, one is used the single shared cache and the other is used the switchable cache bank system. Finally, a performance analysis that was conducted to assess the performance improvements of using a switchable cache bank system. The analysis likely involved measuring and comparing the performance of a system that used the switchable cache bank system against a similar system that did not use this feature. The results of the analysis would provide insight into the effectiveness of the switchable cache bank system and could be used to make informed decisions about implementing it in future systems.
+In order to experiment with the cache bank control system, we have to implement a system that can switch the cache banks. For this purpose, we have implemented a standard Risc V five-stage pipeline processor. We have added the custom instruction and the cache bank system to that. For the implementation, we have used Qurtus II  software to test the implementation on the FPGA. Also, we have two custom assembly programs, one is used the single shared cache and the other is used the switchable cache bank system. Finally, a performance analysis was conducted to assess the performance improvements of using a switchable cache bank system. The analysis likely involved measuring and comparing the performance of a system that used the switchable cache bank system against a similar system that did not use this feature. The results of the analysis would provide insight into the effectiveness of the switchable cache bank system and could be used to make informed decisions about implementing it in future systems.
 
 ### Hardware and Software Design
 The hardware simulation environment was designed using Verilog. We have designed separate instruction and data memory systems. In our system cache banks, data memory, and instruction memory is modeled as it gives real functionality and timing. The memory hierarchy and the complete system implementation are indicated in Fig. 3.
@@ -223,7 +222,15 @@ For the synthesis part, and for creating a netlist for FPGA we used “Quartus I
   
 ## Results and Analysis
 
+Once the switchable cache system was fully implemented and tested, a performance analysis was conducted to compare its performance with that of a regular system that uses a single cache. This was achieved by measuring the execution time of a particular application that was specifically designed for this purpose. During the system design phase, a simple cache configuration was chosen for the switchable cache system that was best suited for the specific application of matrix addition. The performance of the switchable cache system was compared to that of a regular system with a single cache by executing the same matrix addition application assembly sequence which has cache switching and without cache switching, and measuring the time it took for each system to complete the instruction sequence. The results of this performance comparison were presented below in Fig 7, which showed the execution time for a matrix addition application with and without using cache switching.
+
+![Fig. 7](./images/7.png)
+  
+  Fig 7 : Execution Time for a Matrix Addition Application with and without using Cache Switching
+
 ## Conclusion
+
+The table clearly demonstrated that the switchable cache system provided significant performance improvements over the shared cache design. The execution time for the application was reduced for the optimized cache configuration of the switchable cache system, compared to the shared cache design. These results suggest that using a switchable cache system can significantly improve the performance of a system and provide optimized cache configurations for specific applications
 
 ## Publications
 1. [Semester 7 report](./)
